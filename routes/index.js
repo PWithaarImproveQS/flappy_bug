@@ -8,6 +8,6 @@ exports.index = function(req, res){
   res.render('index', { title: 'Express' });
 };
 
-exports.birds = function(req, res){
-  res.render('birds', { title: 'Birds.js', wsAddress: Const.SOCKET_ADDR + ':' + Const.SOCKET_PORT });
+exports.game = function(req, res){
+  res.render('game', { title: 'game.js', wsAddress: Const.SOCKET_ADDR + ':' + Const.SOCKET_PORT });
 };

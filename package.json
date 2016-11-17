@@ -1,5 +1,5 @@
 {
-  "name": "Sloppy Tester",
+  "name": "Sloppy_Tester",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "express": "3.4.8",
-    "pug": "*",
+    "jade": "*",
     "socket.io": "*",
     "mysql": "*"
   }

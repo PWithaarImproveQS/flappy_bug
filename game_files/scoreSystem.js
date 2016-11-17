@@ -3,7 +3,7 @@ var MySQL = require('mysql');
 var DB_HOST = '127.0.0.1';
 var DB_USER = 'root';
 var DB_PASS = ''
-var DB_DATA = 'birds'
+var DB_DATA = 'game'
 
 var NUMBER_OF_HIGHSCORES_TO_RETREIVE = 10;
 

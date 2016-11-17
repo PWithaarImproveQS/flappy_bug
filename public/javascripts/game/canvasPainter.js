@@ -14,7 +14,7 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
   // Ressources
   var NB_RESSOURCES_TO_LOAD   = 2;
 
-  // Birds sprites
+  // Game sprites
   var BIRDS_SPRITES = [
     'images/clumsy.png',
     'images/clumsy-blue.png',
@@ -32,7 +32,7 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
       _parallaxGround,
       _picPipe,
       _picBG = new Array();
-      _picBirds = new Array();
+      _picGame = new Array();
 
 
   function getNbRessourcesToLoad () {
@@ -98,11 +98,11 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
       };
     }
 
-    // Draw birds !
+    // Draw game !
     if (players) {
       nb = players.length;
       for (i = 0; i < nb; i++) {
-        players[i].draw(ctx, currentTime, _picBirds, gameState);
+        players[i].draw(ctx, currentTime, _picGame, gameState);
       };
     }
 
@@ -143,13 +143,13 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
     _picPipe.src = 'images/pipe.png';
     _picPipe.onload = function() { onRessourceLoaded(onReadyCallback); };    
 
-    // Load birds sprites
+    // Load game sprites
     for (i = 0; i < BIRDS_SPRITES.length; i++) {
       bird = new Image();
       bird.src = BIRDS_SPRITES[i];
       bird.onload = function() { onRessourceLoaded(onReadyCallback); };
       // Add bird sprite in our array
-      _picBirds.push(bird);
+      _picGame.push(bird);
     };
 
     // Load Backgrounds

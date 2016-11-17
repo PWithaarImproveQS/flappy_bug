@@ -29,8 +29,8 @@ if ('development' == app.get('env')) {
   app.use(express.errorHandler());
 }
 
-app.get('/', routes.index);
-app.get('/birds', routes.birds);
+app.get('/', routes.game);
+//app.get('/game', routes.game);
 
 // Route to get shared const file
 app.get('/sharedConstants.js', function(req, res) {
@@ -41,9 +41,5 @@ var server = http.createServer(app).listen(app.get('port'), function(){
   console.log('Express server listening on port ' + app.get('port'));
 });
 
-// var io = socketio.listen(server);
-// io.on('connection', function (socket) {
-// 	console.log("Connected");
-// });
 
 game.startServer(server);

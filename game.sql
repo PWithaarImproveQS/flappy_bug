@@ -17,10 +17,10 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données: `birds`
+-- Base de données: `game`
 --
-CREATE DATABASE IF NOT EXISTS `birds` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `birds`;
+CREATE DATABASE IF NOT EXISTS `game` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `game`;
 
 -- --------------------------------------------------------
 
