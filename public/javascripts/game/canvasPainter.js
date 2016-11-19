@@ -19,7 +19,8 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
     'images/clumsy.png',
     'images/clumsy-blue.png',
     'images/clumsy-red.png',
-    'images/clumsy-multi.png'
+    'images/clumsy-green.png',
+    'images/clumsy-pink.png'
   ];
 
   var that = {},
@@ -88,6 +89,11 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
     nb = _picBG.length;
     for (i = 0; i < nb; i++) {
       _picBG[i].draw(ctx, ellapsedTime, isNight);
+      // if (ellapsedTime < 10000)
+      // {
+      //   ctx.save();
+      //   ctx.globalAlpha = 0.0001 * ellapsedTime; 
+      // }
     };
 
     // Draw pipes

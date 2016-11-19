@@ -176,13 +176,15 @@ exports.startServer = function (server) {
     
     // Register to socket events
     socket.on('disconnect', function () {
-//         var player = socket.PlayerInstance(function (error, player) {
-
-// //      socket.get('PlayerInstance', function (error, player) {
-//         _playersManager.removePlayer(player);
-//         socket.broadcast.emit('player_disconnect', player.getPlayerObject());
-//         player = null;
-//       });
+        var player = socket.PlayerInstance;
+        if (player != undefined)
+        {
+//      socket.get('PlayerInstance', function (error, player) {
+         socket.broadcast.emit('player_disconnect', player.getPlayerObject());
+         _playersManager.removePlayer(player);
+      
+         player = null;
+        }
     });
     socket.on('say_hi', function (nick, fn) {
       fn(_gameState, player.getID());

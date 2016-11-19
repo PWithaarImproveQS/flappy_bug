@@ -7,7 +7,7 @@ var constant = {
 
   SCREEN_WIDTH:             900,
   SCREEN_HEIGHT:            768,
-  FLOOR_POS_Y:              672,
+  FLOOR_POS_Y:              720,
   LEVEL_SPEED:              0.3,
   TIME_BETWEEN_GAMES:       5000,
 
@@ -19,7 +19,7 @@ var constant = {
   DISTANCE_BETWEEN_PIPES:   380,
   MIN_PIPE_HEIGHT:          60,
   MAX_PIPE_HEIGHT:          630,
-  HEIGHT_BETWEEN_PIPES:     250
+  HEIGHT_BETWEEN_PIPES:     450
 };
 
 // To be use by the server part, we have to provide the object with exports

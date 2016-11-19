@@ -5,7 +5,7 @@
 */
 define(function() {
 
-  var SMOOTH_DAY_NIGHHT_TRANSITION_DURATION = 2000;
+  var SMOOTH_DAY_NIGHHT_TRANSITION_DURATION = 10000;
 
   function ParallaxBg (dayRessource, nightRessource, width, height, speed, posY, screenWidth) {
     this.dPic       = dayRessource;
@@ -32,25 +32,31 @@ define(function() {
 
     // Calc opacity
     this.calcOpacity(time, isNight);
-
+    
+    var firstPic, secondPic;
+    
+    if  (this.nightCycle == true) {
+      firstPic = this.nPic;
+      secondPic = this.dPic;
+    } else {
+      firstPic = this.dPic;
+      secondPic = this.nPic;
+    }
     // While we don't completly fill the screen, draw a part of the bg
     while (drawPos < this.maxW) {
+    
+      
+ 
+      if (firstPic)
+         ctx.drawImage(firstPic, drawPos, this.posY, this.width, this.height);
 
-      // If it's not full night, draw day BG
-      if ((this.dPic) && (this.nightOpacity != 1))
-        ctx.drawImage(this.dPic, drawPos, this.posY, this.width, this.height);
-
-      // If we are in night cycle, redraw the bg with the opaque night ressource
-      if ((this.nPic) && (this.nightCycle == true)) {
-
-        // If it's not full night, save context and apply opacity on the night picture
-        if (this.nightOpacity != 1) {
+      // If we're in transition set opacity
+      if ((secondPic) && (this.isCalcOpacity)) {
           ctx.save();
-          ctx.globalAlpha = this.nightOpacity;
-        }
-        
-        // Draw night BG
-        ctx.drawImage(this.nPic, drawPos, this.posY, this.width, this.height);
+          ctx.globalAlpha = 1 - this.nightOpacity;
+          
+         // draw the second background for transition
+         ctx.drawImage(secondPic, drawPos, this.posY, this.width, this.height);
 
         if (this.nightOpacity != 1)
           ctx.restore();
@@ -92,9 +98,6 @@ define(function() {
         this.changeOpacityTime = 0;
       }
 
-      // According to the cycle, adjust opacity
-      if (this.nightCycle == false)
-        this.nightOpacity = 1 - this.nightOpacity;
     }
 
   }

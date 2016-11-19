@@ -31,10 +31,11 @@ require(['canvasPainter', 'playersManager', '../../sharedConstants'], function (
       _isNight = false;
 
   function draw (currentTime, ellapsedTime) {
-
-    // If player score is > 15, night !!
-    if ((_gameState == enumState.OnGame) && (_playerManager.getCurrentPlayer().getScore() == 15))
+  // If player score is > 15, night !!
+    if ((_gameState == enumState.OnGame) && ((_playerManager.getCurrentPlayer().getScore() % 20) == 0))
       _isNight = true;
+   if ((_gameState == enumState.OnGame) && ((_playerManager.getCurrentPlayer().getScore() % 40) == 0))
+      _isNight = false;
 
     canvasPainter.draw(currentTime, ellapsedTime, _playerManager, _pipeList, _gameState, _isNight);
   }
@@ -49,7 +50,7 @@ require(['canvasPainter', 'playersManager', '../../sharedConstants'], function (
     // Call for next anim frame
     if (_gameState == enumState.OnGame)
       requestAnimationFrame(gameLoop);
-
+ 
     // Get time difference between the last call and now
     if (_lastTime) {
       ellapsedTime = now - _lastTime;
@@ -250,7 +251,7 @@ require(['canvasPainter', 'playersManager', '../../sharedConstants'], function (
 
     // reset graphics in case to prepare the next game
     canvasPainter.resetForNewGame();
-    _isNight = false;
+    //_isNight = false;
   }
 
   function changeGameState (gameState) {
