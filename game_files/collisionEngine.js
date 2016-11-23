@@ -20,10 +20,15 @@ function checkBirdCollision (pipe, birdInstance) {
     }
   }
   
-  // If the bird hit the ground
-  if (bird.posY + Const.BIRD_HEIGHT > Const.FLOOR_POS_Y) {
-    return (true);
-  }
+ // if (bird.posY < 0)
+ //   bird.posY = Const.FLOOR_POS_Y - bird.posY;
+    if (bird.posY + Const.BIRD_HEIGHT > Const.FLOOR_POS_Y) 
+     bird.posY = 0;
+ 
+ // console.log(bird.posY);
+   
+    //return (true);
+  //}
 
   return (false);
 };

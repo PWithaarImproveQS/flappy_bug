@@ -18,7 +18,8 @@ function playerLog (socket, nick) {
     
   // Bind new client events
   socket.on('change_ready_state', function (readyState) {
-    
+    console.log("player changed : " + nick + readyState);
+   
     // If the server is currently waiting for players, update ready state
     if (_gameState == enums.ServerState.WaitingForPlayers) {
       _playersManager.changeLobbyState(player, readyState);
@@ -28,7 +29,15 @@ function playerLog (socket, nick) {
   socket.on('player_jump', function () {
     player.jump();
   });
+  
+  socket.on('player_left', function() {
+    player.left();
+  });
 
+  socket.on('player_right', function() {
+    player.right();
+  });
+  
   // Set player's nickname and prepare him for the next game
   _playersManager.prepareNewPlayer(player, nick);
 

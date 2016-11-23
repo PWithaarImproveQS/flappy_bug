@@ -5,9 +5,11 @@ var util          = require('util'),
     enums         = require('./enums');
 
 var NB_AVAILABLE_BIRDS_COLOR = 4;
+var READY_TIMEOUT = 5000;
 
 var _playersList  = new Array(),
     _posOnGrid    = 0,
+    _timeToStart = 0,
     _scores       = new Scores();
 
 function PlayersManager () {
@@ -62,7 +64,10 @@ PlayersManager.prototype.changeLobbyState = function (player, isReady) {
   for (i = 0; i < nbPlayers; i++) {
     // if at least one player doesn't ready, return
     if (_playersList[i].getState() == enums.PlayerState.WaitingInLobby) {
-      console.info(_playersList[i].getNick() + " is not yet ready, don't start game");
+      setTimeout(function() {
+          _playersList[i].setTimeReadyState(isReady);
+      }, 3000);
+     
       return;
     }
   };

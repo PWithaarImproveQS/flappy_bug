@@ -197,6 +197,20 @@ require(['canvasPainter', 'playersManager', '../../sharedConstants'], function (
               inputsManager();
           }
       });
+      document.addEventListener('keydown', function (event) {
+          if (event.keyCode == 37) {// Key left
+            _socket.emit('player_left');
+          }
+          if (event.keyCode == 39) {// Key right
+            _socket.emit('player_right');          }
+      });
+      document.addEventListener('keyup', function (event) {
+          if (event.keyCode == 37) {// Key left
+            _socket.emit('player_left');
+          }
+          if (event.keyCode == 39) {// Key right
+            _socket.emit('player_right');          }
+      });
     }
     else {
       var evt = window.navigator.msPointerEnabled ? 'MSPointerDown' : 'touchstart';

@@ -17,6 +17,7 @@ var ROTATION_SPEED          = 3;
 function Player (socket, uid, color) {
   this._socket    = socket;
   this._speedY    = 0;
+  this._speedX    = 0;
   this._rank      = 1;
   this._lastPipe  = 0;
   this._playerTinyObject = {
@@ -45,6 +46,9 @@ function Player (socket, uid, color) {
       this._playerTinyObject.rotation += Math.round(this._speedY * ROTATION_SPEED);
       if (this._playerTinyObject.rotation > MIN_ROTATION)
         this._playerTinyObject.rotation = MIN_ROTATION;
+     //   if ((this._playerTinyObject.posX < 0) || (this._playerTinyObject > 700)) this.speedX = 0;
+    //    this._playerTinyObject.posX += this.speedX;
+        
     }
     // If he's died, update it's X position
     else if (this._playerTinyObject.state == enums.PlayerState.Died) {
@@ -59,6 +63,16 @@ function Player (socket, uid, color) {
     this._speedY = JUMP_SPEED;
     this._playerTinyObject.rotation = MAX_ROTATION;
   };
+  
+  
+  // Player.prototype.left = function () {
+  //   this.speedX = -1;
+  //   console.info("Speed is " + this.speedX);
+  // };
+  
+  // Player.prototype.right = function () {
+  //   this.speedX = 1;
+  // };
 
   Player.prototype.getNick = function () { return (this._playerTinyObject.nick); };
   Player.prototype.setNick = function (nick) {
@@ -81,6 +95,10 @@ function Player (socket, uid, color) {
   Player.prototype.setReadyState = function (readyState) {
     this._playerTinyObject.state = (readyState == true) ? enums.PlayerState.Playing : enums.PlayerState.WaitingInLobby;
     console.info(this._playerTinyObject.nick + ' is ' + ((this._playerTinyObject.state == enums.PlayerState.Playing) ? 'ready !' : 'not yet ready'));
+  };
+   Player.prototype.setTimeReadyState = function () {
+    this._playerTinyObject.state = enums.PlayerState.Playing;
+    console.info(this._playerTinyObject.nick + ' is automatically joining');
   };
 
   Player.prototype.setBestScore = function (score) {

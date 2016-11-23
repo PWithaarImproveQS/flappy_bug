@@ -12,7 +12,7 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
   var SCORE_SHADOW_OFFSET = 5;
 
   // Ressources
-  var NB_RESSOURCES_TO_LOAD   = 2;
+  var NB_RESSOURCES_TO_LOAD   = 1;
 
   // Game sprites
   var BIRDS_SPRITES = [
@@ -117,10 +117,10 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
       drawScore(playerManager.getCurrentPlayer().getScore());
 
     // Last but not least, draw ground
-    if (pipes)
-      _parallaxGround.draw(ctx, currentTime);
-    else
-      _parallaxGround.draw(ctx, 0);
+    // if (pipes)
+    //   _parallaxGround.draw(ctx, currentTime);
+    // else
+    //   _parallaxGround.draw(ctx, 0);
   };
 
     that.resetForNewGame = function () {
@@ -139,10 +139,10 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
         i;
 
     // Load ground
-    _picGround = new Image();
-    _picGround.src = 'images/ground.png';
-    _picGround.onload = function() { onRessourceLoaded(onReadyCallback); };
-    _parallaxGround = new Parallax(_picGround, null, 900, 96, Const.LEVEL_SPEED, 672, Const.SCREEN_WIDTH);
+    // _picGround = new Image();
+    // _picGround.src = 'images/ground.png';
+    // _picGround.onload = function() { onRessourceLoaded(onReadyCallback); };
+    // _parallaxGround = new Parallax(_picGround, null, 900, 96, Const.LEVEL_SPEED, 672, Const.SCREEN_WIDTH);
 
     // Load pipe
     _picPipe = new Image();
@@ -187,7 +187,7 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
 
     function onRessourceLoaded (onReadyCallback) {
       var totalRessources = getNbRessourcesToLoad();
-      
+      console.log(_nbRessourcesToLoad);
       if (--_nbRessourcesToLoad <= 0) {
         _isReadyToDraw = true;
         onReadyCallback();

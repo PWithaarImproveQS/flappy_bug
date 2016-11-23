@@ -17,7 +17,7 @@ define(['playerEntity'], function (Player) {
 
     if (this.getPlayerFromId(infos.id) !== null) {
       console.log(infos.nick + ' is already in the list ! Adding aborted');
-      return;
+   //  return;
     }
 
     // Create a player and push it into the player list
