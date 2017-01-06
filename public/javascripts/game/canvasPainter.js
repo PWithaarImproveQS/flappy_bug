@@ -133,7 +133,7 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
   };
 
   that.loadRessources = function (onReadyCallback) {
-    var bird,
+    var bug,
         dBg,
         nBg,
         i;
@@ -151,11 +151,11 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
 
     // Load game sprites
     for (i = 0; i < BIRDS_SPRITES.length; i++) {
-      bird = new Image();
-      bird.src = BIRDS_SPRITES[i];
-      bird.onload = function() { onRessourceLoaded(onReadyCallback); };
-      // Add bird sprite in our array
-      _picGame.push(bird);
+      bug = new Image();
+      bug.src = BIRDS_SPRITES[i];
+      bug.onload = function() { onRessourceLoaded(onReadyCallback); };
+      // Add bug sprite in our array
+      _picGame.push(bug);
     };
 
     // Load Backgrounds

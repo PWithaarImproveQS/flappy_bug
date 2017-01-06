@@ -121,7 +121,7 @@ function Player (socket, uid, color) {
         col,
         randomMoveX;
 
-    // Place bird on the departure grid
+    // Place bug on the departure grid
     line = Math.floor(pos / MAX_BIRDS_IN_A_ROW);
     col = Math.floor(pos % MAX_BIRDS_IN_A_ROW);
     randomMoveX = Math.floor(Math.random() * (SPACE_BETWEEN_BIRDS_X / 2 + 1));

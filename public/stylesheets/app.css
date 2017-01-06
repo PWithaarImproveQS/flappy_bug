@@ -98,14 +98,14 @@ canvas {
 	-webkit-animation: boxMove 1s ease alternate infinite;
 }
 
-#gs-loader-anim-bird {
+#gs-loader-anim-bug {
 	display: inline-block;
 	width: 85px;
 	height: 60px;
 	background: url('../images/clumsy.png');
 	background-position: 0 0;
-	animation: birdFly 300ms steps(3, end) infinite;
-	-webkit-animation: birdFly 300ms steps(2, end) infinite;
+	animation: bugFly 300ms steps(3, end) infinite;
+	-webkit-animation: bugFly 300ms steps(2, end) infinite;
 }
 #gs-loader-text {
 	position: absolute;
@@ -258,12 +258,12 @@ input[type="button"] {
 	from {top: 200px;}
 	to {top: 150px;}
 }
-@keyframes birdFly
+@keyframes bugFly
 {
 	from {background-position: 0;}
 	to {background-position: 170px;}
 }
-@-webkit-keyframes birdFly
+@-webkit-keyframes bugFly
 {
 	from {background-position: 0;}
 	to {background-position: 170px;}

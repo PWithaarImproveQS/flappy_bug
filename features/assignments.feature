@@ -90,8 +90,4 @@ Feature: Workshop features
     - Limiet aantal spelers
     - Niveau verhogen na x
     - Database opslag scores / spelers
-  
-    
-    
-    
     

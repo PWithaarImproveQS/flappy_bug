@@ -29,11 +29,11 @@ define(['../../sharedConstants'], function (Const) {
       var frameNumber,
           nickPos;
 
-      // Do not draw bird if its state is unclear
+      // Do not draw bug if its state is unclear
       if (this._serverInfos.state == enumPlayerState.Unset) {
         return;
       }
-      // And do not draw bird if he's waiting in the lobby for the current game finish
+      // And do not draw bug if he's waiting in the lobby for the current game finish
       else if ((this._serverInfos.state == enumPlayerState.WaitingInLobby) && (gameState == 2)) {
         return;
       }
@@ -52,17 +52,17 @@ define(['../../sharedConstants'], function (Const) {
           ctx.fillText(this._serverInfos.nick + ' (' + this._serverInfos.best_score + ')', nickPos, this._serverInfos.posY - 20);
         }
 
-        // Move to the center of the player's bird
+        // Move to the center of the player's bug
         ctx.translate(this._serverInfos.posX + Const.BIRD_WIDTH / 2, this._serverInfos.posY  + Const.BIRD_HEIGHT / 2);
 
-        // Rotate the bird !
+        // Rotate the bug !
         ctx.rotate(this._serverInfos.rotation * Math.PI / 180);
 
-        // Then draw bird
+        // Then draw bug
         if (this._serverInfos.state == enumPlayerState.WaitingInLobby) {
           ctx.drawImage(spriteList[this._serverInfos.color], 0, 0, SPRITE_BIRD_WIDTH, SPRITE_BIRD_HEIGHT, -(Const.BIRD_WIDTH / 2), -(Const.BIRD_HEIGHT / 2), Const.BIRD_WIDTH, Const.BIRD_HEIGHT);
         }
-        // If he is ready or in game, animate the bird !
+        // If he is ready or in game, animate the bug !
         else {
           frameNumber = Math.round(time / COMPLETE_ANNIMATION_DURATION) % ANIMATION_FRAME_NUMBER;
           ctx.drawImage(spriteList[this._serverInfos.color], frameNumber * SPRITE_BIRD_WIDTH, 0, SPRITE_BIRD_WIDTH, SPRITE_BIRD_HEIGHT, -(Const.BIRD_WIDTH / 2), -(Const.BIRD_HEIGHT / 2), Const.BIRD_WIDTH, Const.BIRD_HEIGHT);

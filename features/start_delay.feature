@@ -1,7 +1,7 @@
 Feature: Delay of starting the game when players are ready
   To support the players to be able to start a new game
-  and order to give other players the chance to join that game
-  There is a ready state for the players that indicated they can player
+  and in order to give other players the chance to join that game
+  there is a ready state for the players that indicated they can play
   
   - In the case of a single player the game start imidiatly
   - In the case of multiple players the game starts when they are all ready

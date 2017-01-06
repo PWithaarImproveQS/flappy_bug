@@ -20,13 +20,13 @@ util.inherits(PlayersManager, EventEmitter);
 
 PlayersManager.prototype.addNewPlayer = function (playerSocket, id) {
   var newPlayer,
-      birdColor;
+      bugColor;
 
   // Set an available color according the number of client's sprites
-  birdColor = Math.floor(Math.random() * ((NB_AVAILABLE_BIRDS_COLOR - 1) + 1));
+  bugColor = Math.floor(Math.random() * ((NB_AVAILABLE_BIRDS_COLOR - 1) + 1));
 
   // Create new player and add it in the list
-  newPlayer = new Player(playerSocket, id, birdColor);
+  newPlayer = new Player(playerSocket, id, bugColor);
   _playersList.push(newPlayer);
 
   console.info('New player connected. There is currently ' + _playersList.length + ' player(s)');
