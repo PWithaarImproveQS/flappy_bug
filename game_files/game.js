@@ -6,11 +6,12 @@ var PlayersManager    = require('./playersManager'),
 
 var _playersManager,
     _pipeManager,
-    io,
+    
     _gameState,
     _timeStartGame,
     _lastTime = null;
-
+var Server = require('socket.io');
+var io;
 
 function playerLog (socket, nick) {
   // Retreive PlayerInstance
@@ -18,10 +19,11 @@ function playerLog (socket, nick) {
     
   // Bind new client events
   socket.on('change_ready_state', function (readyState) {
-    console.log("player changed : " + nick + readyState);
-   
+    socket.emit('player_state_set', readyState);
     // If the server is currently waiting for players, update ready state
+    console.log("Gamestate " + _gameState);
     if (_gameState == enums.ServerState.WaitingForPlayers) {
+      console.log("player: " + nick + " changes to state : " + readyState);
       _playersManager.changeLobbyState(player, readyState);
       socket.broadcast.emit('player_ready_state', player.getPlayerObject());
     }
@@ -62,7 +64,7 @@ function updateGameState (newState, notifyClients) {
       log += 'displaying ranking'
       break;
     default:
-      log += 'dead :p'
+      log += 'dead ~_~'
   }
   console.info(log);
 
@@ -153,12 +155,19 @@ function startGameLoop () {
   }, 1000 / 60);
 }
 
+exports.stopServer = function (callback) {
+  io.httpServer.close(callback);
+};
 
-exports.startServer = function (server) {
-  io = require('socket.io').listen(server);//Const.SOCKET_PORT);
-  // io.configure(function(){
-  //   io.set('log level', 2);
-  // });
+exports.startServer = function (server, port) {
+  
+   if (server == null) {
+    io = new Server(port);
+  } else
+  {
+    io = new Server(server);
+  }
+  
 
   _gameState = enums.ServerState.WaitingForPlayers;
   
@@ -177,9 +186,6 @@ exports.startServer = function (server) {
   
   io.on('connection', function (socket) {
 
-  // On new client connection
-//  io.sockets.on('connection', function (socket) {
-
     // Add new player
     var player = _playersManager.addNewPlayer(socket, socket.id);
     
@@ -188,7 +194,6 @@ exports.startServer = function (server) {
         var player = socket.PlayerInstance;
         if (player != undefined)
         {
-//      socket.get('PlayerInstance', function (error, player) {
          socket.broadcast.emit('player_disconnect', player.getPlayerObject());
          _playersManager.removePlayer(player);
       
@@ -196,16 +201,14 @@ exports.startServer = function (server) {
         }
     });
     socket.on('say_hi', function (nick, fn) {
+      console.log("Player says hi: " + nick);
       fn(_gameState, player.getID());
       socket.PlayerInstance = player;
       playerLog(socket, nick);
     });
 
-    // Remember PlayerInstance and push it to the player list
-    //socket.PlayerInstance = player;
-    //socket.set('PlayerInstance', player);
   });
   
 
-  console.log('Game started and waiting for players on port ' + Const.SOCKET_PORT);
+  console.log('Game started and waiting for players on port ' + port);
 };

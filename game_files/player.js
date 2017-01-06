@@ -94,7 +94,7 @@ function Player (socket, uid, color) {
 
   Player.prototype.setReadyState = function (readyState) {
     this._playerTinyObject.state = (readyState == true) ? enums.PlayerState.Playing : enums.PlayerState.WaitingInLobby;
-    console.info(this._playerTinyObject.nick + ' is ' + ((this._playerTinyObject.state == enums.PlayerState.Playing) ? 'ready !' : 'not yet ready'));
+    console.info(this._playerTinyObject.nick + ' is ' + ((this._playerTinyObject.state == enums.PlayerState.Playing) ? 'ready!' : 'not yet ready'));
   };
    Player.prototype.setTimeReadyState = function () {
     this._playerTinyObject.state = enums.PlayerState.Playing;
@@ -103,7 +103,7 @@ function Player (socket, uid, color) {
 
   Player.prototype.setBestScore = function (score) {
     this._playerTinyObject.best_score = score;
-    console.info(this._playerTinyObject.nick + ' just beat his highscore to ' + score);
+    console.info(this._playerTinyObject.nick + ' just set his highscore to ' + score);
   };
 
   Player.prototype.isReadyToPlay = function () {

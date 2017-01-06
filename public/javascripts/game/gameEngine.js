@@ -30,6 +30,8 @@ require(['canvasPainter', 'playersManager', '../../sharedConstants'], function (
       _infPanlTimer,
       _isNight = false;
 
+   
+
   function draw (currentTime, ellapsedTime) {
   // If player score is > 15, night !!
     if ((_gameState == enumState.OnGame) && ((_playerManager.getCurrentPlayer().getScore() % 20) == 0))

@@ -16,10 +16,10 @@ var constant = {
 
   // Pipe constants
   PIPE_WIDTH:               100,
-  DISTANCE_BETWEEN_PIPES:   380,
+  DISTANCE_BETWEEN_PIPES:   580,
   MIN_PIPE_HEIGHT:          60,
   MAX_PIPE_HEIGHT:          630,
-  HEIGHT_BETWEEN_PIPES:     450
+  HEIGHT_BETWEEN_PIPES:     350
 };
 
 // To be use by the server part, we have to provide the object with exports

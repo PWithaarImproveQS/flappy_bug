@@ -57,15 +57,17 @@ PlayersManager.prototype.changeLobbyState = function (player, isReady) {
   }
   else {
     // Change ready state
+    console.log("Setting the ready state :" + isReady);
     _playersList[pos].setReadyState(isReady);
   }
 
-  // PlayersManager check if players are ready
+//  PlayersManager check if players are ready
   for (i = 0; i < nbPlayers; i++) {
     // if at least one player doesn't ready, return
     if (_playersList[i].getState() == enums.PlayerState.WaitingInLobby) {
       setTimeout(function() {
-          _playersList[i].setTimeReadyState(isReady);
+        //this.emit('players-ready');
+          //_playersList[i].setTimeReadyState(isReady);
       }, 3000);
      
       return;

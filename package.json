@@ -9,6 +9,12 @@
     "express": "3.4.8",
     "jade": "*",
     "socket.io": "*",
+    "async" : "*",
+    "sinon" : "*",
+    "cucumber" : "*",
     "mysql": "*"
+  },
+  "scripts": {
+    "test": "mocha"
   }
 }

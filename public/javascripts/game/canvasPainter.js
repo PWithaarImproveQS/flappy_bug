@@ -146,7 +146,7 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
 
     // Load pipe
     _picPipe = new Image();
-    _picPipe.src = 'images/pipe.png';
+    _picPipe.src = 'images/pipe_night.png';
     _picPipe.onload = function() { onRessourceLoaded(onReadyCallback); };    
 
     // Load game sprites
