@@ -202,6 +202,10 @@ exports.startServer = function (server, port) {
     });
     socket.on('say_hi', function (nick, fn) {
       console.log("Player says hi: " + nick);
+      if (_playersManager.getPlayerFromNick(nick) !== null) {
+        fn(_gameState, null);
+        return(false);
+      }
       fn(_gameState, player.getID());
       socket.PlayerInstance = player;
       playerLog(socket, nick);

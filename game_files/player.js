@@ -152,6 +152,9 @@ function Player (socket, uid, color) {
     if (this._playerTinyObject.score > this._playerTinyObject.best_score) {
       this._playerTinyObject.best_score = this._playerTinyObject.score;
     }
+    HighScores.sort(function (a, b) {
+      return b.score - a.score;
+    });
 
     // Send him complete ranking
     this._socket.emit('ranking',  { score: this._playerTinyObject.score, bestScore: this._playerTinyObject.best_score, rank: this._rank, nbPlayers: NBPlayers, highscores: HighScores });

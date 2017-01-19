@@ -109,7 +109,7 @@ require(['canvasPainter', 'playersManager', '../../sharedConstants'], function (
       // Draw bg and bind button click
       draw(0, 0);
       showHideMenu(enumPanels.Login, true);
-      document.getElementById('player-connection').onclick = loadGameRoom;
+      document.getElementById('player-connection').onclick = setPlayer;
   
     });
 
@@ -120,8 +120,9 @@ require(['canvasPainter', 'playersManager', '../../sharedConstants'], function (
     });
     
   }
-
-  function loadGameRoom () {
+  
+  function setPlayer()
+  {
     var nick = document.getElementById('player-name').value;
 
     // If nick is empty or if it has the default value, 
@@ -136,10 +137,44 @@ require(['canvasPainter', 'playersManager', '../../sharedConstants'], function (
         sessionStorage.setItem('playerName', nick);
       }
     }
+    
+    
+    // Send nickname to the server
+    console.log('Send nickname ' + nick);
+    _socket.emit('say_hi', nick, function (serverState, uuid) {
+      
+      if (uuid == null)
+      {
+        showHideMenu(enumPanels.Login, true);
+        infoPanel(true, 'Nick already taken! Please a unique <strong>name</strong> !', 2000);
+        document.getElementById('player-name').focus();
+      
+        return (true);
+      }
+      _userID = uuid;
+      changeGameState(serverState);
+      loadGameRoom(serverState);
+    
+    });
 
+  }
+
+  function loadGameRoom (serverState) {
     // Unbind button event to prevent "space click"
-    document.getElementById('player-connection').onclick = function() { return false; };
+      document.getElementById('player-connection').onclick = function() { return false; };
 
+      // Display a message according to the game state
+      if (serverState == enumState.OnGame) {
+        infoPanel(true, '<strong>Please wait</strong> for the previous game to finish...');
+      }
+      else {
+        // Display a little help text
+        if (_isTouchDevice == false)
+          infoPanel(true, 'Press <strong>space</strong> to fly !', 3000);
+        else
+          infoPanel(true, '<strong>Tap</strong> to fly !', 3000);
+      }
+      
     // Bind new socket events
     _socket.on('player_list', function (playersList) {
       var nb = playersList.length,
@@ -148,6 +183,7 @@ require(['canvasPainter', 'playersManager', '../../sharedConstants'], function (
       // Add this player in the list
       for (i = 0; i <nb; i++) {
         _playerManager.addPlayer(playersList[i], _userID);
+        console.log("added player to common list: " + playersList);
       };
 
       // Redraw
@@ -172,25 +208,8 @@ require(['canvasPainter', 'playersManager', '../../sharedConstants'], function (
     _socket.on('ranking', function (score) {
       displayRanking(score);
     });
-
-    // Send nickname to the server
-    console.log('Send nickname ' + nick);
-    _socket.emit('say_hi', nick, function (serverState, uuid) {
-      _userID = uuid;
-      changeGameState(serverState);
-
-      // Display a message according to the game state
-      if (serverState == enumState.OnGame) {
-        infoPanel(true, '<strong>Please wait</strong> for the previous game to finish...');
-      }
-      else {
-        // Display a little help text
-        if (_isTouchDevice == false)
-          infoPanel(true, 'Press <strong>space</strong> to fly !', 3000);
-        else
-          infoPanel(true, '<strong>Tap</strong> to fly !', 3000);
-      }
-    });
+ 
+    
   
     // Get input
     if (_isTouchDevice == false) {
@@ -251,7 +270,10 @@ require(['canvasPainter', 'playersManager', '../../sharedConstants'], function (
 
     // Display hish scores
     nodeHS.innerHTML = '';
-    nbHs = score.highscores.length;
+    
+ 
+    nbHs = score.highscores.length <= 5 ? score.highscores.length : 5 ;
+    
     for (i = 0; i < nbHs; i++) {
       nodeHS.innerHTML += '<li><span>#' + (i + 1) + '</span> ' + score.highscores[i].player + ' <strong>' + score.highscores[i].score + '</strong></li>';
     };
@@ -261,13 +283,14 @@ require(['canvasPainter', 'playersManager', '../../sharedConstants'], function (
 
     // Display hish scores in a middle of the waiting time
     window.setTimeout(function () {
-      showHideMenu(enumPanels.HighScores, true);
+       showHideMenu(enumPanels.Ranking, false);
+       showHideMenu(enumPanels.HighScores, true);
     },
     Const.TIME_BETWEEN_GAMES / 2);
 
-    // reset graphics in case to prepare the next game
-    canvasPainter.resetForNewGame();
-    //_isNight = false;
+   // reset graphics in case to prepare the next game
+      canvasPainter.resetForNewGame();
+  
   }
 
   function changeGameState (gameState) {
@@ -288,6 +311,7 @@ require(['canvasPainter', 'playersManager', '../../sharedConstants'], function (
         break;
 
       case enumState.Ranking:
+       
         strLog += 'display ranking';
         // Start timer for next game
         _ranking_time = Const.TIME_BETWEEN_GAMES / 1000;

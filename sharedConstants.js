@@ -9,7 +9,7 @@ var constant = {
   SCREEN_HEIGHT:            768,
   FLOOR_POS_Y:              720,
   LEVEL_SPEED:              0.3,
-  TIME_BETWEEN_GAMES:       5000,
+  TIME_BETWEEN_GAMES:       15000,
 
   BIRD_WIDTH:               42,
   BIRD_HEIGHT:              30,

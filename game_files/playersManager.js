@@ -4,7 +4,7 @@ var util          = require('util'),
     Player        = require('./player'),
     enums         = require('./enums');
 
-var NB_AVAILABLE_BIRDS_COLOR = 4;
+var NB_AVAILABLE_BIRDS_COLOR = 8;
 var READY_TIMEOUT = 5000;
 
 var _playersList  = new Array(),
@@ -77,6 +77,19 @@ PlayersManager.prototype.changeLobbyState = function (player, isReady) {
   // else raise the start game event !
   this.emit('players-ready');
 }
+
+PlayersManager.prototype.getPlayerFromNick = function (playerNick) {
+  var nbPlayers = _playersList.length,
+      i;
+
+  for (i = 0; i < nbPlayers; i++) {
+    if (_playersList[i].getNick() === playerNick)
+      return (_playersList[i]);
+  };
+
+  console.log("Can't find player in list");
+  return (null);
+};
 
 PlayersManager.prototype.getPlayerList = function (specificState) {
   var players = new Array(),

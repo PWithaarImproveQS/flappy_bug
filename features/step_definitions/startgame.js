@@ -47,7 +47,7 @@
   }
   
 
-       this.Given(/^a game with (\d+) players$/, function (amount, done) {
+       this.Given(/^a game with (\d+) players$/, {timeout: 60 * 1000}, function (amount, done) {
            var server = this.getServer();
            // create amount clients async and call done when done
            async.doWhilst(
@@ -65,7 +65,7 @@
         done();
        });
        
-        this.Then(/^the game starts within (\d+) milliseconds/, function (timeout, done) {
+        this.Then(/^the game starts within (\d+) milliseconds/, {timeout: 60 * 1000} , function (timeout, done) {
             var timeoutID = setTimeout(function(){
                 done(new Error("Game not started in time"));
             }, timeout);
@@ -79,5 +79,18 @@
             });
        });
 
+
+        this.Then(/^the game waits for player (\d+) to become ready$/, function (player, done) {
+            var maystart = false;
+            clients[0].on('update_game_state', function (gameState) {
+               if (gameState == 2) {
+                   maystart ? done() : done(new Error("Didn't expect the game to start, but it did!"));
+               }
+            });
+            
+            clients[player -1].emit('change_ready_state', 1);
+            maystart = true;
+            
+        });
 
 };

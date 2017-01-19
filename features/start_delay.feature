@@ -14,7 +14,7 @@ Feature: Delay of starting the game when players are ready
     Then the game starts within 100 milliseconds
     
 
-  Scenario: Start the game with delay on ready when there players not yet ready
+  Scenario: The game doesn't start when there players not yet ready
     Given a game with 2 players
     When player 1 is ready
-    Then the game starts within 5000 milliseconds
+    Then the game waits for player 2 to become ready

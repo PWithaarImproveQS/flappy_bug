@@ -16,17 +16,22 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
 
   // Game sprites
   var BIRDS_SPRITES = [
-    'images/clumsy.png',
+    'images/clumsy-black.png',
     'images/clumsy-blue.png',
     'images/clumsy-red.png',
     'images/clumsy-green.png',
-    'images/clumsy-pink.png'
+    'images/clumsy-pink.png',
+    'images/clumsy-orange.png',
+    'images/clumsy-yellow.png',
+    'images/clumsy-cyan.png'
   ];
 
   var that = {},
       ctx = document.getElementById('gs-canvas').getContext('2d'),
+      
+      
       _isReadyToDraw = false,
-
+     
       // Ressources
       _nbRessourcesToLoad = getNbRessourcesToLoad(),
       _picGround,
@@ -34,8 +39,11 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
       _picPipe,
       _picBG = new Array();
       _picGame = new Array();
-
-
+      
+      
+      ctx.canvas.width = 900; //window.innerHeight * 1.17; 
+      ctx.canvas.height = 768; // window.innerHeight;
+     
   function getNbRessourcesToLoad () {
     var nbRessources = NB_RESSOURCES_TO_LOAD + BIRDS_SPRITES.length,
         nbBg = BgRessources.length,
@@ -53,6 +61,7 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
   }
 
   function drawPipe (pipe) {
+    
     // Draw the first pipe
     ctx.drawImage(_picPipe, 0, 0, SPRITE_PIPE_WIDTH, SPRITE_PIPE_HEIGHT, pipe.posX, pipe.posY - SPRITE_PIPE_HEIGHT, Const.PIPE_WIDTH, SPRITE_PIPE_HEIGHT);
 
@@ -89,11 +98,7 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
     nb = _picBG.length;
     for (i = 0; i < nb; i++) {
       _picBG[i].draw(ctx, ellapsedTime, isNight);
-      // if (ellapsedTime < 10000)
-      // {
-      //   ctx.save();
-      //   ctx.globalAlpha = 0.0001 * ellapsedTime; 
-      // }
+
     };
 
     // Draw pipes
@@ -116,11 +121,6 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
     if (gameState == 2)
       drawScore(playerManager.getCurrentPlayer().getScore());
 
-    // Last but not least, draw ground
-    // if (pipes)
-    //   _parallaxGround.draw(ctx, currentTime);
-    // else
-    //   _parallaxGround.draw(ctx, 0);
   };
 
     that.resetForNewGame = function () {
@@ -137,12 +137,6 @@ define(['parallax', 'backgroundRessources', '../../sharedConstants'], function (
         dBg,
         nBg,
         i;
-
-    // Load ground
-    // _picGround = new Image();
-    // _picGround.src = 'images/ground.png';
-    // _picGround.onload = function() { onRessourceLoaded(onReadyCallback); };
-    // _parallaxGround = new Parallax(_picGround, null, 900, 96, Const.LEVEL_SPEED, 672, Const.SCREEN_WIDTH);
 
     // Load pipe
     _picPipe = new Image();

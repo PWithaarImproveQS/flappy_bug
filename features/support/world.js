@@ -6,9 +6,9 @@ function CustomWorld() {
    // comment unterneath out to get logging
   (function(){
        
-   // console.log = function (message) {};
+    console.log = function (message) {};
       
-  //  console.info = function (message) {};
+    console.info = function (message) {};
   })(); // end log
     
   this.startServer = function(callback)

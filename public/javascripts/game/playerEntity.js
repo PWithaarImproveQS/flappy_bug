@@ -48,8 +48,16 @@ define(['../../sharedConstants'], function (Const) {
           // Draw player name
           ctx.font = '25px mini_pixel';
           ctx.fillStyle = '#FFA24A';
+          nickPos = this._serverInfos.posX + (Const.BIRD_WIDTH / 2) - (ctx.measureText(this._serverInfos.nick).width / 2);
+          ctx.fillText(this._serverInfos.nick, nickPos, this._serverInfos.posY - 30);
+          ctx.fillText(' (' + this._serverInfos.best_score + ' - ' + this._serverInfos.score + ')', nickPos, this._serverInfos.posY - 15);
+        } else
+        {
+          // Draw player name
+          ctx.font = '25px mini_pixel';
+          ctx.fillStyle = '#7AFF33';
           nickPos = this._serverInfos.posX + (Const.BIRD_WIDTH / 2) - (ctx.measureText(this._serverInfos.nick + ' (' + this._serverInfos.best_score + ')').width / 2);
-          ctx.fillText(this._serverInfos.nick + ' (' + this._serverInfos.best_score + ')', nickPos, this._serverInfos.posY - 20);
+          ctx.fillText(this._serverInfos.nick + ' (' + this._serverInfos.best_score  + ')', nickPos, this._serverInfos.posY - 20);
         }
 
         // Move to the center of the player's bug
