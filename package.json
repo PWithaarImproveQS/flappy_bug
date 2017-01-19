@@ -1,6 +1,6 @@
 {
-  "name": "Sloppy_Tester",
-  "version": "0.0.1",
+  "name": "Flappy_Bug",
+  "version": "0.0.7",
   "private": true,
   "scripts": {
     "test": "mocha"
@@ -9,6 +9,7 @@
     "express": "3.4.8",
     "jade": "*",
     "socket.io": "*",
+    "socket.io-client": "*",
     "async": "*",
     "sinon": "*",
     "mysql": "*"
