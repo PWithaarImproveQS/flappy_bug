@@ -31,7 +31,7 @@ FlappyWorld.prototype.getServer = function()
 };
 
 FlappyWorld.prototype.playersManager = null;
-FlappyWorld.prototype.port = 8081;
+FlappyWorld.prototype.port = 8080;
 FlappyWorld.prototype.ip = '127.0.0.1';
 FlappyWorld.prototype.generalTimeout = 2000;
 

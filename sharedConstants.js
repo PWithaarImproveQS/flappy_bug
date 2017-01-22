@@ -2,9 +2,11 @@
 var constant = {
 
   SERVER_PORT:              8080,
+  SERVER_TEST_PORT:         9000,
   SOCKET_PORT:              1337,
-  SOCKET_ADDR:              'http://192.168.42.110',
-
+  SOCKET_ADDR:              'http://192.168.42.docker',
+  SELENIUM_HUB:             'http://192.168.42.100:4444/wd/hub',
+  
   SCREEN_WIDTH:             900,
   SCREEN_HEIGHT:            768,
   FLOOR_POS_Y:              720,

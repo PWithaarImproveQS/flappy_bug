@@ -11,7 +11,7 @@ var webdriver = require('selenium-webdriver'),
 
 var browser = new webdriver.Builder()
     .forBrowser('chrome')
-    .usingServer('http://192.168.42.100:4444/wd/hub')
+    .usingServer(Const.SELENIUM_HUB)
     .build();
 
 var defaultTimeout = 10000;
@@ -36,7 +36,7 @@ defineSupportCode(function({Before, After, Given, When, Then}) {
         browser.quit();
     });
     
-     Given('a started server', {timeout: 60 * 1000}, function (done) {
+     Given('a started server', function (done) {
        done();
      });
      
@@ -51,11 +51,11 @@ defineSupportCode(function({Before, After, Given, When, Then}) {
        return browser.get(Const.SOCKET_ADDR + ':' + Const.SERVER_PORT);
     });
      
-    When('I wait for the page to be loaded', function () {
+    When('I wait for the page to be loaded', {timeout: 60 * 1000}, function () {
       return waitfor(statusField, defaultTimeout); 
     });
     
-    When('I click the name box', function () {
+    When('I click the name box', {timeout: 60 * 1000}, function () {
        return browser.findElement(By.id(playerNameInput)).click();
     });
        
@@ -73,7 +73,7 @@ defineSupportCode(function({Before, After, Given, When, Then}) {
     
     Then('my name is accepted', function (done) {
        browser.findElement(By.id(statusField)).getAttribute("innerHTML").then(function(text) {
-             Assert.deepEqual(text, "Playing");
+             Assert.deepEqual(text, "Playing", "Player is not playing. Name is rejected");
              done();
         });
     });

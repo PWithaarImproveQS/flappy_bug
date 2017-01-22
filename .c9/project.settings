@@ -73,7 +73,7 @@
             "@inited": "true",
             "json()": {
                 "Cucumber": {
-                    "command": "node_modules/cucumber/bin/cucumber.js $project_path",
+                    "command": "node_modules/cucumber/bin/cucumber.js $project_path --name v1",
                     "debug": true,
                     "name": "Cucumber",
                     "runner": "Node.js",
