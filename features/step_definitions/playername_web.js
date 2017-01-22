@@ -1,69 +1,69 @@
-// var {defineSupportCode} = require('cucumber');
-//  var Assert = require('assert');
+var {defineSupportCode} = require('cucumber');
+ var Assert = require('assert');
+var webdriver = require('selenium-webdriver'),
+    By = webdriver.By,
+    until = webdriver.until;
 
-//  //const wdio = require('wdio');
+var driver1 = new webdriver.Builder()
+    .forBrowser('chrome')
+    .usingServer('http://192.168.42.100:4444/wd/hub')
+    .build();
+    
+// var driver2 = new webdriver.Builder()
+//     .forBrowser('chrome')
+//     .usingServer('http://192.168.42.100:4444/wd/hub')
+//     .build();
+        
+    
+var defaultTimeout = 10000;
 
-// var webdriverio = require('webdriverio');
-// var options = { desiredCapabilities: { browserName: 'chrome' } };
-// var client = webdriverio.remote(options);
-// client
-//     .init()
-//     .url('https://duckduckgo.com/')
-//     .setValue('#search_form_input_homepage', 'WebdriverIO')
-//     .click('#search_button_homepage')
-//     .getTitle().then(function(title) {
-//         console.log('Title is: ' + title);
-//         // outputs:
-//         // "Title is: WebdriverIO (Software) at DuckDuckGo"
-//     })
-//     .end();
-    
-// defineSupportCode(function({Before, After, Given, When, Then}) {
+ 
 
-//     // var browser = wdio.getBrowser({
-//     //     desiredCapabilities: {
-//     //         browserName: 'chrome'
-//     //     }
-//     // });
+defineSupportCode(function({Before, After, Given, When, Then}) {
+
+    function waitfor(cssLocator, timeout) {
+        var waitTimeout = timeout || defaultTimeout;
+        return driver1.wait(function() {
+          return driver1.isElementPresent({ css: cssLocator });
+        }, waitTimeout);
+    }  
     
-//     // // Initialize selenium standalone server if it is not started yet 
-//     // Before({tags: "@webdriver"}, wdio.initSelenium);
+    // Initialize selenium standalone server if it is not started yet 
+    Before({tags: "@webdriver"}, function(done) {
+      
+    });
     
-//     // // Initialize selenium standalone server if it is not started yet 
-//     // Before({tags: "@webdriver"}, function(done) {
-//     //   wdio.wrap(function(done)
-//     //   {
-//     //       console.log("init");
-//     //       browser.init();
-//     //       console.log(wdio.getBrowser());
-//     //   });
-//     // });
+      // Initialize selenium standalone server if it is not started yet 
+    After({tags: "@webdriver"}, function(done) {
+        driver1.quit();
+        //driver2.quit();
+    });
     
-//     //   // Initialize selenium standalone server if it is not started yet 
-//     // After({tags: "@webdriver"}, function(done) {
-//     //   wdio.wrap(function(done)
-//     //   {
-//     //       browser.end();
-//     //   });
-//     // });
-    
-//      Given('a started server', {timeout: 60 * 100}, function (done) {
-//          client.init();
-//          client.end();
-//          done();
-//         //wdio.wrap(function (done) {
-//             //browser.url('http://www.google.com');
-//             //console.log(browser.getTitle);
-//             //assert.equal('Google', browser.getTitle());
-//         //});
-//      });
+     Given('a started server', {timeout: 60 * 100}, function () {
+         
+        // driver1.get('http://192.168.42.110:8080');
+        //   driver1.wait(
+        //      until.elementLocated(By.id('player-name')
+        //     ), 100).then(function()
+        //     {
+        //         var element = driver1.findElement(By.id('player-name'));
+        //         element.clear();
+        //         element.sendKeys("Hallo").then(function()
+        //         {
+        //             return;
+        //         });
+        //     });
+            
+            
+     });
      
-//      Given('there already is a player called Pieter in the game', function (done) {
-       
-//       done();
-//      });
+     Given('there already is a player called Pieter in the game', function (done) {
+     
+        done();
+         
+     });
    
-//      When('I go to the flappy bug url in my web browser', function (done) {
-//       done();
-//      });
-// });
+     When('I go to the flappy bug url in my web browser', function (done) {
+      done();
+     });
+});

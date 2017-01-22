@@ -18,4 +18,4 @@ Feature: Delay of starting the game when players are ready
   Scenario: The game doesn't start when there players not yet ready
     Given a game with 2 players
     When player 1 is ready
-    Then the game waits for player 2 to become readyW
+    Then the game waits for player 2 to become ready

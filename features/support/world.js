@@ -6,11 +6,11 @@ var PlayersManager = require('../../game_files/playersManager');
 
 var FlappyWorld = function() {
  
-  // comment out unterneath to get logging
+  
   (function(){
-   // comment this:     
-  // console.log = function (message) {};
-//  console.info = function (message) {};
+  // comment console.log/info unterneath to enable logging
+   console.log = function (message) {};
+   console.info = function (message) {};
    
   })(); // end log
 };

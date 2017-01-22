@@ -1,0 +1,491 @@
+{
+    "breakpoints": {
+        "json()": []
+    },
+    "console": {
+        "@expanded": true,
+        "@height": 539,
+        "@maximized": "false",
+        "json()": {
+            "meta": {
+                "accessList": [
+                    "tab11",
+                    "tab18",
+                    "tab12",
+                    "tab5"
+                ]
+            },
+            "name": "pane1",
+            "nodes": [
+                {
+                    "type": "tab",
+                    "name": "tab12",
+                    "path": "",
+                    "className": [
+                        "tab12"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {},
+                        "filter": true,
+                        "title": "node_modules/cucumber/bin/cucumber.js $project_path - Stopped",
+                        "tooltip": "node_modules/cucumber/bin/cucumber.js $project_path - Stopped",
+                        "output": {
+                            "id": "output125460",
+                            "width": 0,
+                            "height": 0,
+                            "config": {
+                                "toolbar": true,
+                                "command": "node_modules/cucumber/bin/cucumber.js $project_path",
+                                "runner": "Node.js",
+                                "debug": true,
+                                "name": ""
+                            }
+                        }
+                    },
+                    "editorType": "output",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab18",
+                    "path": "",
+                    "className": [
+                        "tab18"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485077327445
+                        },
+                        "filter": true,
+                        "title": "Server - Stopped",
+                        "tooltip": "Server - Stopped",
+                        "output": {
+                            "id": "output263541",
+                            "width": 0,
+                            "height": 0,
+                            "config": {
+                                "command": "./server.js",
+                                "debug": false,
+                                "name": "Server",
+                                "runner": "Node.js",
+                                "toolbar": true
+                            }
+                        }
+                    },
+                    "editorType": "output",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab5",
+                    "path": "",
+                    "className": [
+                        "tab5"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485078849747
+                        },
+                        "filter": true,
+                        "title": "testdriver.js - Stopped",
+                        "tooltip": "testdriver.js - Stopped",
+                        "output": {
+                            "id": "output36820",
+                            "width": 0,
+                            "height": 0,
+                            "config": {
+                                "runner": "Node.js",
+                                "command": "testdriver.js",
+                                "toolbar": true,
+                                "debug": true,
+                                "name": ""
+                            }
+                        }
+                    },
+                    "editorType": "output",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab11",
+                    "path": "",
+                    "className": [
+                        "tab11",
+                        "focus"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485083265820
+                        },
+                        "filter": true,
+                        "title": "bash - \"root@42f843c3dfee: /workspace\"",
+                        "tooltip": "bash - \"root@42f843c3dfee: /workspace\"",
+                        "terminal": {
+                            "id": "devel_700",
+                            "cwd": "",
+                            "width": 1645,
+                            "height": 513
+                        }
+                    },
+                    "editorType": "terminal",
+                    "active": true
+                }
+            ],
+            "skin": "editor_tab",
+            "skinset": "default",
+            "type": "pane"
+        }
+    },
+    "experiments": {
+        "@@enabled": true,
+        "@autosave": 0,
+        "@flat-dark": 0,
+        "@git": 1,
+        "@plugin-manager": 1,
+        "@plugins": 0,
+        "@sdk": 0,
+        "@test": 0
+    },
+    "ext": {
+        "counters": {
+            "@ace": 1,
+            "@acestatus": 1,
+            "@divider": 9,
+            "@document": 27,
+            "@form": 6,
+            "@immediate": 1,
+            "@menu": 9,
+            "@menuitem": 31,
+            "@pane": 2,
+            "@session": 27,
+            "@tab": 26,
+            "@undoManager": 27,
+            "@welcome": 1
+        }
+    },
+    "findinfiles": {
+        "@console": "true",
+        "@matchcase": "false",
+        "@regex": "false",
+        "@scope": "selection",
+        "@wholeword": "false"
+    },
+    "menus": {
+        "@minimized": "false"
+    },
+    "nak": {
+        "@installed": true
+    },
+    "panecycle": {
+        "json()": [
+            "tab11",
+            "tab25"
+        ]
+    },
+    "panels": {
+        "@active-left": "tree",
+        "@active-right": "none",
+        "@width-left": 203,
+        "collab": {
+            "@enabled": "true",
+            "@name": "collab"
+        },
+        "commands.panel": {
+            "@enabled": "true",
+            "@name": "commands.panel"
+        },
+        "debugger": {
+            "@enabled": "true",
+            "@name": "debugger"
+        },
+        "navigate": {
+            "@enabled": "true",
+            "@name": "navigate"
+        },
+        "outline": {
+            "@enabled": "true",
+            "@name": "outline"
+        },
+        "scm": {
+            "@enabled": "true",
+            "@name": "scm"
+        },
+        "tree": {
+            "@enabled": "true",
+            "@name": "tree"
+        }
+    },
+    "projecttree": {
+        "@scrollpos": -10,
+        "@showfs": true,
+        "expanded": {
+            "json()": [
+                "/",
+                "/features",
+                "/features/support",
+                "/features/step_definitions",
+                "/node_modules",
+                "/node_modules/wdio"
+            ]
+        }
+    },
+    "recentfiles": {
+        "json()": []
+    },
+    "tabs": {
+        "json()": {
+            "focus": "tab11",
+            "meta": {
+                "accessList": [
+                    "tab25",
+                    "tab23",
+                    "tab24",
+                    "tab2",
+                    "tab22",
+                    "tab21",
+                    "tab8",
+                    "tab4",
+                    "tab3",
+                    "tab17",
+                    "tab0"
+                ]
+            },
+            "name": "pane0",
+            "nodes": [
+                {
+                    "type": "tab",
+                    "name": "tab17",
+                    "path": "/server.js",
+                    "className": [
+                        "tab17"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485078317070
+                        },
+                        "filter": true,
+                        "title": "server.js",
+                        "tooltip": "/server.js",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab0",
+                    "path": "",
+                    "className": [
+                        "tab0"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "welcome": true
+                        },
+                        "filter": true,
+                        "title": "Welcome",
+                        "welcome": {}
+                    },
+                    "editorType": "welcome",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab3",
+                    "path": "/package.json",
+                    "className": [
+                        "tab3"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485081573622
+                        },
+                        "filter": true,
+                        "title": "package.json",
+                        "tooltip": "/package.json",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab2",
+                    "path": "/features/step_definitions/playername_web.js",
+                    "className": [
+                        "tab2"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "ignoreState": 0,
+                            "timestamp": 1485088460229
+                        },
+                        "filter": true,
+                        "title": "playername_web.js",
+                        "tooltip": "/features/step_definitions/playername_web.js",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab4",
+                    "path": "/testdriver.js",
+                    "className": [
+                        "tab4"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "ignoreState": 0,
+                            "timestamp": 1485080352588
+                        },
+                        "filter": true,
+                        "title": "testdriver.js",
+                        "tooltip": "/testdriver.js",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab8",
+                    "path": "/features/step_definitions/playerName.js",
+                    "className": [
+                        "tab8"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485081967003
+                        },
+                        "filter": true,
+                        "title": "playerName.js",
+                        "tooltip": "/features/step_definitions/playerName.js",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab21",
+                    "path": "/node_modules/selenium-webdriver/lib/error.js",
+                    "className": [
+                        "tab21"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485088408325
+                        },
+                        "filter": true,
+                        "title": "error.js",
+                        "tooltip": "/node_modules/selenium-webdriver/lib/error.js",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab22",
+                    "path": "/features/playerName.feature",
+                    "className": [
+                        "tab22"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485088435021
+                        },
+                        "filter": true,
+                        "title": "playerName.feature",
+                        "tooltip": "/features/playerName.feature",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab23",
+                    "path": "/features/start_delay.feature",
+                    "className": [
+                        "tab23"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485088500262
+                        },
+                        "filter": true,
+                        "title": "start_delay.feature",
+                        "tooltip": "/features/start_delay.feature",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab24",
+                    "path": "/features/step_definitions/startgame.js",
+                    "className": [
+                        "tab24"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485088484477
+                        },
+                        "filter": true,
+                        "title": "startgame.js",
+                        "tooltip": "/features/step_definitions/startgame.js",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab25",
+                    "path": "/features/support/world.js",
+                    "className": [
+                        "tab25"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485088574758
+                        },
+                        "filter": true,
+                        "title": "world.js",
+                        "tooltip": "/features/support/world.js",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": true
+                }
+            ],
+            "skin": "editor_tab",
+            "skinset": "default",
+            "type": "pane"
+        }
+    },
+    "tree_selection": {
+        "json()": [
+            "/features/support/world.js"
+        ]
+    }
+}
