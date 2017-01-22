@@ -1,0 +1,246 @@
+{
+    "breakpoints": {
+        "json()": []
+    },
+    "console": {
+        "@expanded": true,
+        "@height": 539,
+        "@maximized": "false",
+        "json()": {
+            "meta": {
+                "accessList": [
+                    "tab7",
+                    "tab12",
+                    "tab18"
+                ]
+            },
+            "name": "pane1",
+            "nodes": [
+                {
+                    "type": "tab",
+                    "name": "tab7",
+                    "path": "",
+                    "className": [
+                        "tab7",
+                        "focus"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485076824149
+                        },
+                        "filter": true,
+                        "title": "bash - \"21a402a47fd7\"",
+                        "tooltip": "bash - \"21a402a47fd7\"",
+                        "terminal": {
+                            "id": "devel_96",
+                            "cwd": "",
+                            "width": 1648,
+                            "height": 513
+                        }
+                    },
+                    "editorType": "terminal",
+                    "active": true
+                },
+                {
+                    "type": "tab",
+                    "name": "tab12",
+                    "path": "",
+                    "className": [
+                        "tab12"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485076905469
+                        },
+                        "filter": true,
+                        "title": "node_modules/cucumber/bin/cucumber.js $project_path  - Stopped",
+                        "tooltip": "node_modules/cucumber/bin/cucumber.js $project_path  - Stopped",
+                        "output": {
+                            "id": "output125460",
+                            "width": 0,
+                            "height": 0,
+                            "config": {
+                                "toolbar": true,
+                                "command": "node_modules/cucumber/bin/cucumber.js $project_path ",
+                                "runner": "Node.js",
+                                "debug": true,
+                                "name": ""
+                            }
+                        }
+                    },
+                    "editorType": "output",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab18",
+                    "path": "",
+                    "className": [
+                        "tab18"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485077327445
+                        },
+                        "filter": true,
+                        "title": "Server - Stopped",
+                        "tooltip": "Server - Stopped",
+                        "output": {
+                            "id": "output263541",
+                            "width": 0,
+                            "height": 0,
+                            "config": {
+                                "toolbar": true,
+                                "command": "./server.js",
+                                "name": "Server",
+                                "runner": "Node.js",
+                                "debug": true
+                            }
+                        }
+                    },
+                    "editorType": "output",
+                    "active": false
+                }
+            ],
+            "skin": "editor_tab",
+            "skinset": "default",
+            "type": "pane"
+        }
+    },
+    "experiments": {
+        "@@enabled": true,
+        "@autosave": 0,
+        "@flat-dark": 0,
+        "@git": 1,
+        "@plugin-manager": 1,
+        "@plugins": 0,
+        "@sdk": 0,
+        "@test": 0
+    },
+    "ext": {
+        "counters": {
+            "@ace": 2,
+            "@acestatus": 1,
+            "@divider": 6,
+            "@document": 19,
+            "@form": 6,
+            "@immediate": 1,
+            "@menu": 7,
+            "@menuitem": 17,
+            "@pane": 2,
+            "@session": 19,
+            "@tab": 19,
+            "@undoManager": 19,
+            "@welcome": 1
+        }
+    },
+    "findinfiles": {
+        "@console": "true",
+        "@matchcase": "false",
+        "@regex": "false",
+        "@scope": "selection",
+        "@wholeword": "false"
+    },
+    "menus": {
+        "@minimized": "false"
+    },
+    "nak": {
+        "@installed": true
+    },
+    "panecycle": {
+        "json()": [
+            "tab7",
+            "tab17"
+        ]
+    },
+    "panels": {
+        "@active-left": "tree",
+        "@active-right": "none",
+        "collab": {
+            "@enabled": "true",
+            "@name": "collab"
+        },
+        "commands.panel": {
+            "@enabled": "true",
+            "@name": "commands.panel"
+        },
+        "debugger": {
+            "@enabled": "true",
+            "@name": "debugger"
+        },
+        "navigate": {
+            "@enabled": "true",
+            "@name": "navigate"
+        },
+        "outline": {
+            "@enabled": "true",
+            "@name": "outline"
+        },
+        "scm": {
+            "@enabled": "true",
+            "@name": "scm"
+        },
+        "tree": {
+            "@enabled": "true",
+            "@name": "tree"
+        }
+    },
+    "projecttree": {
+        "@showfs": true,
+        "expanded": {
+            "json()": [
+                "/",
+                "/features",
+                "/features/support",
+                "/features/step_definitions"
+            ]
+        }
+    },
+    "recentfiles": {
+        "json()": []
+    },
+    "tabs": {
+        "json()": {
+            "focus": "tab7",
+            "meta": {
+                "accessList": [
+                    "tab17"
+                ]
+            },
+            "name": "pane0",
+            "nodes": [
+                {
+                    "type": "tab",
+                    "name": "tab17",
+                    "path": "/server.js",
+                    "className": [
+                        "tab17"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485077322663
+                        },
+                        "filter": true,
+                        "title": "server.js",
+                        "tooltip": "/server.js",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": true
+                }
+            ],
+            "skin": "editor_tab",
+            "skinset": "default",
+            "type": "pane"
+        }
+    },
+    "tree_selection": {
+        "json()": [
+            "/server.js"
+        ]
+    }
+}
