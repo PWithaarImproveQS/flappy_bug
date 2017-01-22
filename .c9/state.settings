@@ -21,14 +21,38 @@
             "meta": {
                 "accessList": [
                     "tab11",
-                    "tab18",
                     "tab34",
-                    "searchResults",
-                    "tab5"
+                    "tab18"
                 ]
             },
             "name": "pane1",
             "nodes": [
+                {
+                    "type": "tab",
+                    "name": "tab11",
+                    "path": "",
+                    "className": [
+                        "tab11",
+                        "focus"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485083265820
+                        },
+                        "filter": true,
+                        "title": "bash - \"root@42f843c3dfee: /workspace\"",
+                        "tooltip": "bash - \"root@42f843c3dfee: /workspace\"",
+                        "terminal": {
+                            "id": "devel_700",
+                            "cwd": "",
+                            "width": 1651,
+                            "height": 503
+                        }
+                    },
+                    "editorType": "terminal",
+                    "active": true
+                },
                 {
                     "type": "tab",
                     "name": "tab18",
@@ -62,63 +86,6 @@
                 },
                 {
                     "type": "tab",
-                    "name": "tab5",
-                    "path": "",
-                    "className": [
-                        "tab5"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1485078849747
-                        },
-                        "filter": true,
-                        "title": "testdriver.js - Idle",
-                        "tooltip": "testdriver.js - Idle",
-                        "output": {
-                            "id": "output36820",
-                            "width": 0,
-                            "height": 0,
-                            "config": {
-                                "runner": "Node.js",
-                                "command": "testdriver.js",
-                                "toolbar": true,
-                                "debug": true,
-                                "name": ""
-                            }
-                        }
-                    },
-                    "editorType": "output",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "tab11",
-                    "path": "",
-                    "className": [
-                        "tab11",
-                        "focus"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1485083265820
-                        },
-                        "filter": true,
-                        "title": "bash - \"root@42f843c3dfee: /workspace/.c9\"",
-                        "tooltip": "bash - \"root@42f843c3dfee: /workspace/.c9\"",
-                        "terminal": {
-                            "id": "devel_700",
-                            "cwd": "",
-                            "width": 1651,
-                            "height": 503
-                        }
-                    },
-                    "editorType": "terminal",
-                    "active": true
-                },
-                {
-                    "type": "tab",
                     "name": "tab34",
                     "path": "",
                     "className": [
@@ -138,7 +105,7 @@
                             "height": 0,
                             "config": {
                                 "toolbar": true,
-                                "command": "node_modules/cucumber/bin/cucumber.js $project_path --name v1",
+                                "command": "node_modules/cucumber/bin/cucumber.js $project_path",
                                 "runner": "Node.js",
                                 "debug": true,
                                 "name": "Cucumber"
@@ -146,30 +113,6 @@
                         }
                     },
                     "editorType": "output",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "searchResults",
-                    "path": "/.c9/searchresults",
-                    "className": [
-                        "searchResults",
-                        "changed"
-                    ],
-                    "document": {
-                        "changed": true,
-                        "meta": {
-                            "searchResults": true,
-                            "ignoreSave": true,
-                            "newfile": true,
-                            "timestamp": 1485103290639
-                        },
-                        "filter": true,
-                        "title": "Search Results",
-                        "tooltip": "/.c9/searchresults",
-                        "ace": {}
-                    },
-                    "editorType": "ace",
                     "active": false
                 }
             ],
@@ -193,15 +136,15 @@
             "@ace": 2,
             "@acestatus": 2,
             "@divider": 9,
-            "@document": 47,
+            "@document": 48,
             "@form": 6,
             "@immediate": 1,
             "@menu": 9,
             "@menuitem": 31,
             "@pane": 2,
-            "@session": 47,
-            "@tab": 40,
-            "@undoManager": 47,
+            "@session": 48,
+            "@tab": 41,
+            "@undoManager": 48,
             "@welcome": 1
         }
     },
@@ -258,7 +201,7 @@
         }
     },
     "projecttree": {
-        "@scrollpos": 20,
+        "@scrollpos": 0,
         "@showfs": true,
         "expanded": {
             "json()": [
@@ -311,7 +254,7 @@
     },
     "tabs": {
         "json()": {
-            "focus": "/server.js",
+            "focus": "tab11",
             "meta": {
                 "accessList": [
                     "tab39"
@@ -324,8 +267,7 @@
                     "name": "tab39",
                     "path": "/server.js",
                     "className": [
-                        "tab39",
-                        "focus"
+                        "tab39"
                     ],
                     "document": {
                         "changed": false,
@@ -348,7 +290,7 @@
     },
     "tree_selection": {
         "json()": [
-            "/server.js"
+            "/sharedConstants.js"
         ]
     }
 }
