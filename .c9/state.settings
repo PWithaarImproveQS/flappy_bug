@@ -9,39 +9,13 @@
         "json()": {
             "meta": {
                 "accessList": [
-                    "tab7",
-                    "tab12",
-                    "tab18"
+                    "tab2",
+                    "tab18",
+                    "tab12"
                 ]
             },
             "name": "pane1",
             "nodes": [
-                {
-                    "type": "tab",
-                    "name": "tab7",
-                    "path": "",
-                    "className": [
-                        "tab7",
-                        "focus"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1485076824149
-                        },
-                        "filter": true,
-                        "title": "bash - \"21a402a47fd7\"",
-                        "tooltip": "bash - \"21a402a47fd7\"",
-                        "terminal": {
-                            "id": "devel_96",
-                            "cwd": "",
-                            "width": 1648,
-                            "height": 513
-                        }
-                    },
-                    "editorType": "terminal",
-                    "active": true
-                },
                 {
                     "type": "tab",
                     "name": "tab12",
@@ -93,16 +67,42 @@
                             "width": 0,
                             "height": 0,
                             "config": {
-                                "toolbar": true,
                                 "command": "./server.js",
+                                "debug": true,
                                 "name": "Server",
                                 "runner": "Node.js",
-                                "debug": true
+                                "toolbar": true
                             }
                         }
                     },
                     "editorType": "output",
                     "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab2",
+                    "path": "",
+                    "className": [
+                        "tab2",
+                        "focus"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485077672607
+                        },
+                        "filter": true,
+                        "title": "bash - \"root@5400cf5c953f: /workspace\"",
+                        "tooltip": "bash - \"root@5400cf5c953f: /workspace\"",
+                        "terminal": {
+                            "id": "devel_687",
+                            "cwd": "",
+                            "width": 1648,
+                            "height": 513
+                        }
+                    },
+                    "editorType": "terminal",
+                    "active": true
                 }
             ],
             "skin": "editor_tab",
@@ -123,17 +123,17 @@
     "ext": {
         "counters": {
             "@ace": 2,
-            "@acestatus": 1,
-            "@divider": 6,
-            "@document": 19,
+            "@acestatus": 2,
+            "@divider": 5,
+            "@document": 8,
             "@form": 6,
             "@immediate": 1,
-            "@menu": 7,
-            "@menuitem": 17,
+            "@menu": 5,
+            "@menuitem": 13,
             "@pane": 2,
-            "@session": 19,
-            "@tab": 19,
-            "@undoManager": 19,
+            "@session": 8,
+            "@tab": 4,
+            "@undoManager": 8,
             "@welcome": 1
         }
     },
@@ -152,8 +152,8 @@
     },
     "panecycle": {
         "json()": [
-            "tab7",
-            "tab17"
+            "tab2",
+            "tab3"
         ]
     },
     "panels": {
@@ -189,6 +189,7 @@
         }
     },
     "projecttree": {
+        "@scrollpos": -10,
         "@showfs": true,
         "expanded": {
             "json()": [
@@ -204,10 +205,12 @@
     },
     "tabs": {
         "json()": {
-            "focus": "tab7",
+            "focus": "/package.json",
             "meta": {
                 "accessList": [
-                    "tab17"
+                    "tab3",
+                    "tab17",
+                    "tab0"
                 ]
             },
             "name": "pane0",
@@ -222,11 +225,52 @@
                     "document": {
                         "changed": false,
                         "meta": {
-                            "timestamp": 1485077322663
+                            "timestamp": 1485077583140
                         },
                         "filter": true,
                         "title": "server.js",
                         "tooltip": "/server.js",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab0",
+                    "path": "",
+                    "className": [
+                        "tab0"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "welcome": true,
+                            "timestamp": 1485077639683
+                        },
+                        "filter": true,
+                        "title": "Welcome",
+                        "welcome": {}
+                    },
+                    "editorType": "welcome",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab3",
+                    "path": "/package.json",
+                    "className": [
+                        "tab3",
+                        "focus"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485077242337
+                        },
+                        "filter": true,
+                        "title": "package.json",
+                        "tooltip": "/package.json",
                         "ace": {}
                     },
                     "editorType": "ace",
@@ -240,7 +284,7 @@
     },
     "tree_selection": {
         "json()": [
-            "/server.js"
+            "/package.json"
         ]
     }
 }
