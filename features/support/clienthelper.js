@@ -15,12 +15,14 @@ module.exports = {
       }, 2000);
     
       client.once('connect', function() {
-        client.emit('say_hi', playernick, function (serverState, uuid) { });
+        client.emit('say_hi', playernick, function (serverState, uuid) { 
+            if (uuid == null) console.log("Playername not accepted: " + playernick);
+        });
       });  
       client.once('player_list', function() {
         clients.push(client);
         clearTimeout(timeoutID);
-        done(world);  
+        done(world, client);  
       });
     },
     GetRandomNick: function()

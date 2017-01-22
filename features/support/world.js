@@ -9,8 +9,8 @@ var FlappyWorld = function() {
   // comment out unterneath to get logging
   (function(){
    // comment this:     
-   console.log = function (message) {};
-  console.info = function (message) {};
+  // console.log = function (message) {};
+//  console.info = function (message) {};
    
   })(); // end log
 };

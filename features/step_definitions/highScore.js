@@ -1,6 +1,5 @@
  var {defineSupportCode} = require('cucumber');
  var Assert = require('assert');
- var PlayersManager = require('../../game_files/playersManager');
  var ClientHelper = require('../support/clienthelper');
  var clients = require('../support/clients');
  
@@ -10,7 +9,7 @@ defineSupportCode(function({Given, When, Then}) {
     
     Given(/^(.*) has a high score of (\d+)$/, function (playernick, score, done) {
         
-         ClientHelper.ConnectClientToServer(this, playernick, function (world) 
+         ClientHelper.ConnectClientToServer(this, playernick, function (world, client) 
         {
           var player = world.playersManager.getPlayerFromNick(playernick);
           SetPlayerScore(player, score, done);
