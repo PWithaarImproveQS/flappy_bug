@@ -1,18 +1,16 @@
 {
   "name": "Flappy_Bug",
-  "version": "0.0.7",
+  "version": "0.0.9",
   "private": true,
-  "scripts": {
-    "test": "mocha"
-  },
   "dependencies": {
     "express": "3.4.8",
     "jade": "*",
     "socket.io": "*",
     "socket.io-client": "*",
     "async": "*",
-    "sinon": "*",
     "mysql": "*",
-    "cucumber": "2.0.0-rc.6"
+    "cucumber": "2.0.0-rc.6",
+    "selenium-webdriver": "*",
+    "sleep" : "*"
   }
 }

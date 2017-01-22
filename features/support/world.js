@@ -9,8 +9,8 @@ var FlappyWorld = function() {
   
   (function(){
   // comment console.log/info unterneath to enable logging
-   console.log = function (message) {};
-   console.info = function (message) {};
+   //console.log = function (message) {};
+   //console.info = function (message) {};
    
   })(); // end log
 };

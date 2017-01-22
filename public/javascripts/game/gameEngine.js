@@ -110,7 +110,7 @@ require(['canvasPainter', 'playersManager', '../../sharedConstants'], function (
       draw(0, 0);
       showHideMenu(enumPanels.Login, true);
       document.getElementById('player-connection').onclick = setPlayer;
-  
+      document.getElementById('gs-loader-text').innerHTML = 'Waiting for Player';
     });
 
     _socket.on('error', function() {
@@ -154,7 +154,7 @@ require(['canvasPainter', 'playersManager', '../../sharedConstants'], function (
       _userID = uuid;
       changeGameState(serverState);
       loadGameRoom(serverState);
-    
+      document.getElementById('gs-loader-text').innerHTML = 'Playing';
     });
 
   }

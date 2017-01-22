@@ -1,0 +1,354 @@
+{
+    "ace": {
+        "search": {
+            "@backwards": "false",
+            "@highlightmatches": "true",
+            "@matchcase": "false",
+            "@preservecase": "false",
+            "@regex": "false",
+            "@wholeword": "false",
+            "@wraparound": "true"
+        }
+    },
+    "breakpoints": {
+        "json()": []
+    },
+    "console": {
+        "@expanded": true,
+        "@height": 529,
+        "@maximized": "false",
+        "json()": {
+            "meta": {
+                "accessList": [
+                    "tab11",
+                    "tab18",
+                    "tab34",
+                    "searchResults",
+                    "tab5"
+                ]
+            },
+            "name": "pane1",
+            "nodes": [
+                {
+                    "type": "tab",
+                    "name": "tab18",
+                    "path": "",
+                    "className": [
+                        "tab18"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485077327445
+                        },
+                        "filter": true,
+                        "title": "Server - Stopped",
+                        "tooltip": "Server - Stopped",
+                        "output": {
+                            "id": "output263541",
+                            "width": 0,
+                            "height": 0,
+                            "config": {
+                                "command": "./server.js",
+                                "debug": false,
+                                "name": "Server",
+                                "runner": "Node.js",
+                                "toolbar": true
+                            }
+                        }
+                    },
+                    "editorType": "output",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab5",
+                    "path": "",
+                    "className": [
+                        "tab5"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485078849747
+                        },
+                        "filter": true,
+                        "title": "testdriver.js - Idle",
+                        "tooltip": "testdriver.js - Idle",
+                        "output": {
+                            "id": "output36820",
+                            "width": 0,
+                            "height": 0,
+                            "config": {
+                                "runner": "Node.js",
+                                "command": "testdriver.js",
+                                "toolbar": true,
+                                "debug": true,
+                                "name": ""
+                            }
+                        }
+                    },
+                    "editorType": "output",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab11",
+                    "path": "",
+                    "className": [
+                        "tab11",
+                        "focus"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485083265820
+                        },
+                        "filter": true,
+                        "title": "bash - \"root@42f843c3dfee: /workspace/.c9\"",
+                        "tooltip": "bash - \"root@42f843c3dfee: /workspace/.c9\"",
+                        "terminal": {
+                            "id": "devel_700",
+                            "cwd": "",
+                            "width": 1651,
+                            "height": 503
+                        }
+                    },
+                    "editorType": "terminal",
+                    "active": true
+                },
+                {
+                    "type": "tab",
+                    "name": "tab34",
+                    "path": "",
+                    "className": [
+                        "tab34"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485103198841
+                        },
+                        "filter": true,
+                        "title": "Cucumber - Stopped",
+                        "tooltip": "Cucumber - Stopped",
+                        "output": {
+                            "id": "output367402",
+                            "width": 0,
+                            "height": 0,
+                            "config": {
+                                "toolbar": true,
+                                "command": "node_modules/cucumber/bin/cucumber.js $project_path --name v1",
+                                "runner": "Node.js",
+                                "debug": true,
+                                "name": "Cucumber"
+                            }
+                        }
+                    },
+                    "editorType": "output",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "searchResults",
+                    "path": "/.c9/searchresults",
+                    "className": [
+                        "searchResults",
+                        "changed"
+                    ],
+                    "document": {
+                        "changed": true,
+                        "meta": {
+                            "searchResults": true,
+                            "ignoreSave": true,
+                            "newfile": true,
+                            "timestamp": 1485103290639
+                        },
+                        "filter": true,
+                        "title": "Search Results",
+                        "tooltip": "/.c9/searchresults",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                }
+            ],
+            "skin": "editor_tab",
+            "skinset": "default",
+            "type": "pane"
+        }
+    },
+    "experiments": {
+        "@@enabled": true,
+        "@autosave": 0,
+        "@flat-dark": 0,
+        "@git": 1,
+        "@plugin-manager": 1,
+        "@plugins": 0,
+        "@sdk": 0,
+        "@test": 0
+    },
+    "ext": {
+        "counters": {
+            "@ace": 2,
+            "@acestatus": 2,
+            "@divider": 9,
+            "@document": 47,
+            "@form": 6,
+            "@immediate": 1,
+            "@menu": 9,
+            "@menuitem": 31,
+            "@pane": 2,
+            "@session": 47,
+            "@tab": 40,
+            "@undoManager": 47,
+            "@welcome": 1
+        }
+    },
+    "findinfiles": {
+        "@console": "true",
+        "@matchcase": "false",
+        "@regex": "false",
+        "@scope": "workspace",
+        "@wholeword": "false"
+    },
+    "menus": {
+        "@minimized": "false"
+    },
+    "nak": {
+        "@installed": true
+    },
+    "panecycle": {
+        "json()": [
+            "tab11",
+            "tab39"
+        ]
+    },
+    "panels": {
+        "@active-left": "tree",
+        "@active-right": "none",
+        "@width-left": 197,
+        "collab": {
+            "@enabled": "true",
+            "@name": "collab"
+        },
+        "commands.panel": {
+            "@enabled": "true",
+            "@name": "commands.panel"
+        },
+        "debugger": {
+            "@enabled": "true",
+            "@name": "debugger"
+        },
+        "navigate": {
+            "@enabled": "true",
+            "@name": "navigate"
+        },
+        "outline": {
+            "@enabled": "true",
+            "@name": "outline"
+        },
+        "scm": {
+            "@enabled": "true",
+            "@name": "scm"
+        },
+        "tree": {
+            "@enabled": "true",
+            "@name": "tree"
+        }
+    },
+    "projecttree": {
+        "@scrollpos": 20,
+        "@showfs": true,
+        "expanded": {
+            "json()": [
+                "/",
+                "/node_modules/chimp",
+                "/New Folder",
+                "/node_modules/chimp/node_modules",
+                "/node_modules/chimp/node_modules/cucumber",
+                "/features",
+                "/features/New Folder",
+                "/features/pageobjects",
+                "/features/support",
+                "/features/step_definitions",
+                "/game_files",
+                "/public",
+                "/public/javascripts",
+                "/public/javascripts/game"
+            ]
+        }
+    },
+    "recentfiles": {
+        "json()": []
+    },
+    "search-history": {
+        "replace": {
+            "json()": [
+                "playButton",
+                "statusField",
+                "playerNameInput",
+                "browser",
+                "driver"
+            ]
+        },
+        "search": {
+            "json()": [
+                "'player-connection'",
+                "'gs-loader-text'",
+                "'player-name'",
+                "driver",
+                "driver1"
+            ]
+        },
+        "searchfiles": {
+            "json()": [
+                "gs-loader-text",
+                "Player says",
+                "Player says hi:"
+            ]
+        }
+    },
+    "tabs": {
+        "json()": {
+            "focus": "/server.js",
+            "meta": {
+                "accessList": [
+                    "tab39"
+                ]
+            },
+            "name": "pane0",
+            "nodes": [
+                {
+                    "type": "tab",
+                    "name": "tab39",
+                    "path": "/server.js",
+                    "className": [
+                        "tab39",
+                        "focus"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485078593260
+                        },
+                        "filter": true,
+                        "title": "server.js",
+                        "tooltip": "/server.js",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": true
+                }
+            ],
+            "skin": "editor_tab",
+            "skinset": "default",
+            "type": "pane"
+        }
+    },
+    "tree_selection": {
+        "json()": [
+            "/server.js"
+        ]
+    }
+}

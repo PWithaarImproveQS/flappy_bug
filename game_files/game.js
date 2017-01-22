@@ -214,6 +214,7 @@ exports.startServer = function (server, port) {
     socket.on('say_hi', function (nick, fn) {
       console.log("Player says hi: " + nick);
       if (_playersManager.getPlayerFromNick(nick) !== null) {
+        console.log("Player rejected.. Nick already taken!");
         fn(_gameState, null);
         return(false);
       }
