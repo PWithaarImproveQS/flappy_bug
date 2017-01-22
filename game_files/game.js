@@ -6,7 +6,7 @@ var PlayersManager    = require('./playersManager'),
 
 var _playersManager,
     _pipeManager,
-    
+    _timer,
     _gameState,
     _timeStartGame,
     _lastTime = null;
@@ -156,7 +156,15 @@ function startGameLoop () {
 }
 
 exports.stopServer = function (callback) {
+  clearInterval(_timer);
   io.httpServer.close(callback);
+  console.log("Server Stopped");
+};
+
+exports.startServerWithDependencyInjection = function (server, port, playersManager)
+{
+  _playersManager = playersManager;
+  this.startServer(server, port);
 };
 
 exports.startServer = function (server, port) {
@@ -172,7 +180,10 @@ exports.startServer = function (server, port) {
   _gameState = enums.ServerState.WaitingForPlayers;
   
   // Create playersManager instance and register events
-  _playersManager = new PlayersManager();
+  if (_playersManager == null) {
+    _playersManager = new PlayersManager();
+  }
+  
   _playersManager.on('players-ready', function () {
     startGameLoop();
   });

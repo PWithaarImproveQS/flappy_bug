@@ -2,11 +2,11 @@ var enums   = require('./enums'),
     Const   = require('../sharedConstants').constant;
 
 // Defines
-var MAX_BIRDS_IN_A_ROW      = 3;
-var START_BIRD_POS_X        = 100;
-var SPACE_BETWEEN_BIRDS_X   = 120;
-var START_BIRD_POS_Y        = 100;
-var SPACE_BETWEEN_BIRDS_Y   = 100;
+var MAX_BIRDS_IN_A_ROW      = 5;
+var START_BIRD_POS_X        = 50;
+var SPACE_BETWEEN_BIRDS_X   = 85;
+var START_BIRD_POS_Y        = 50;
+var SPACE_BETWEEN_BIRDS_Y   = 60;
 var GRAVITY_SPEED           = 0.05;
 var JUMP_SPEED              = -0.8;
 var MAX_ROTATION            = -10;
@@ -89,7 +89,7 @@ function Player (socket, uid, color) {
     this._rank = nbPlayersLeft;
     this._playerTinyObject.state = enums.PlayerState.Died;
 
-    console.info('OMG ! They kill ' + this._playerTinyObject.nick + ' :p');
+    console.info('OMG ! They kill ' + this._playerTinyObject.nick + ' after ' + this._playerTinyObject.score + ' pipes');
   };
 
   Player.prototype.setReadyState = function (readyState) {
@@ -124,10 +124,13 @@ function Player (socket, uid, color) {
     // Place bug on the departure grid
     line = Math.floor(pos / MAX_BIRDS_IN_A_ROW);
     col = Math.floor(pos % MAX_BIRDS_IN_A_ROW);
-    randomMoveX = Math.floor(Math.random() * (SPACE_BETWEEN_BIRDS_X / 2 + 1));
+    
+    console.log('line : ' + line + ' col: ' + col);
+    randomMoveX = 0; //Math.floor(Math.random() * (SPACE_BETWEEN_BIRDS_X / 2 + 1));
+    
     this._playerTinyObject.posY = START_BIRD_POS_Y + line * SPACE_BETWEEN_BIRDS_Y;
     this._playerTinyObject.posX = START_BIRD_POS_X + col * SPACE_BETWEEN_BIRDS_X + randomMoveX;
-
+    console.log('posx : ' + this._playerTinyObject.posX  + ' powy: ' + this._playerTinyObject.posY );
     // Reset usefull values
     this._speedY  = 0;
     this._rank    = 0;
@@ -147,15 +150,15 @@ function Player (socket, uid, color) {
   };
 
   Player.prototype.sendScore = function (NBPlayers, HighScores) {
+  console.log(this._playerTinyObject.best_score);
 
+      console.log(this._playerTinyObject.score);
     // Update player best score if he just make a new one !
     if (this._playerTinyObject.score > this._playerTinyObject.best_score) {
+    
       this._playerTinyObject.best_score = this._playerTinyObject.score;
     }
-    HighScores.sort(function (a, b) {
-      return b.score - a.score;
-    });
-
+    
     // Send him complete ranking
     this._socket.emit('ranking',  { score: this._playerTinyObject.score, bestScore: this._playerTinyObject.best_score, rank: this._rank, nbPlayers: NBPlayers, highscores: HighScores });
   };

@@ -13,6 +13,7 @@ var _playersList  = new Array(),
     _scores       = new Scores();
 
 function PlayersManager () {
+  _scores = new Scores();
   EventEmitter.call(this);
 }
 
@@ -32,6 +33,13 @@ PlayersManager.prototype.addNewPlayer = function (playerSocket, id) {
   console.info('New player connected. There is currently ' + _playersList.length + ' player(s)');
 
   return (newPlayer);
+};
+
+PlayersManager.prototype.removeAllPlayers = function () {
+  console.info('Removing all players');
+  _playersList.splice(0, _playersList.length);
+  console.info('It remains ' + _playersList.length + ' player(s)');
+ 
 };
 
 PlayersManager.prototype.removePlayer = function (player) {
@@ -162,10 +170,11 @@ PlayersManager.prototype.resetPlayersForNewGame = function () {
   return (updatedList);
 };
 
+
 PlayersManager.prototype.sendPlayerScore = function () {
   var nbPlayers = _playersList.length,
       i;
-
+  
   // Save player score
   for (i = 0; i < nbPlayers; i++) {
     _scores.savePlayerScore(_playersList[i], _playersList[i].getScore());

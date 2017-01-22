@@ -33,8 +33,8 @@ function ScoreSystem () {
   // Test if DB is available
   testConnection.connect(function (err) {
     if (err) {
-      console.info("\n\t[ScoreSystem] Can't connect user [" + DB_USER + '] to database hosted in [' + DB_HOST + ']');
-      console.info("\t[ScoreSystem] Players score will be store in an array, and loose when server will be off\n");
+   //  console.info("\n\t[ScoreSystem] Can't connect user [" + DB_USER + '] to database hosted in [' + DB_HOST + ']');
+   //   console.info("\t[ScoreSystem] Players score will be store in an array, and loose when server will be off\n");
       isDbAvailable = false;
     }
     else {
@@ -107,9 +107,13 @@ ScoreSystem.prototype.setPlayerHighScore = function (player) {
   }
   else {
     if (typeof this._bestScore[nick] != 'undefined')
+    {
       player.setBestScore(this._bestScore[nick]);
+    }
     else
+    {
       player.setBestScore(0);  
+    }
   }
 };
 
@@ -138,6 +142,7 @@ ScoreSystem.prototype.savePlayerScore = function (player, lastScore) {
       });
     }
     else {
+  
       this._bestScore[nick] = lastScore;
       console.info(nick + ' new high score (' + lastScore + ') was saved in the score array !');
     }
@@ -189,12 +194,23 @@ ScoreSystem.prototype.getHighScores = function (callback) {
     // Return the NUMBER_OF_HIGHSCORES_TO_RETREIVE best scores
     hsArray = [];
     nbRes = (this._bestScore.length > NUMBER_OF_HIGHSCORES_TO_RETREIVE) ? NUMBER_OF_HIGHSCORES_TO_RETREIVE : this._bestScore.length;
-
+   
     for (key in this._bestScore) {
-      hsArray.push( { player: key, score: this._bestScore[key] } );
+      hsArray.push( { player: key, score: this._bestScore[key].toString()} );
     };
   }
-
+   
+  hsArray.sort(function(a,b) {
+    if (a.score == b.score)
+    {
+       return (a.player > b.player)  ? 1 : -1;
+    };
+    return a.score < b.score;
+  }); 
+  
+  console.log("Higscores:");
+  console.log(hsArray);
+  
   callback(hsArray);
 };
 

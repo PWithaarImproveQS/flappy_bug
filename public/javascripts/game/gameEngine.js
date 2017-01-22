@@ -272,7 +272,7 @@ require(['canvasPainter', 'playersManager', '../../sharedConstants'], function (
     nodeHS.innerHTML = '';
     
  
-    nbHs = score.highscores.length <= 5 ? score.highscores.length : 5 ;
+    nbHs = score.highscores.length <= 10 ? score.highscores.length : 10 ;
     
     for (i = 0; i < nbHs; i++) {
       nodeHS.innerHTML += '<li><span>#' + (i + 1) + '</span> ' + score.highscores[i].player + ' <strong>' + score.highscores[i].score + '</strong></li>';

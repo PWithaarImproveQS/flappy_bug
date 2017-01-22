@@ -1,86 +1,74 @@
- 
-   
-  module.exports = function () {
-    var async = require('async');
-      
-    var ioclient = require('socket.io-client');
-    var generalTimeout = 2000;
-   
-    
-    
-    var clients = [];
-  
-   
-  this.Before(function(done) {
-      this.startServer(done);
-  });
-  
-  this.After(function(done) {
-      for (var i = 0, len = clients.length; i < len; i++) {
-        clients[i].emit('disconnect');
-        clients[i].close();
-      }
-      clients.length = 0
-      this.stopServer(done);
-  });     
-        
-   function ConnectClientToServer(server, done)
-  {
-      var client = new ioclient.connect(server, {
-            'reconnection delay' : 0
-            , 'reopen delay' : 0
-            , 'force new connection' : true
-        }); 
-      
-      var timeoutID = setTimeout(function(){
-            done(new Error("Not connected"));
-      }, generalTimeout);
-  
-      client.once('connect', function() {
-        client.emit('say_hi', 'test-' + Math.random().toString(36).substr(2, 5), function (serverState, uuid) { });
-      });  
-      client.once('player_list', function() {
-        clients.push(client);
-        clearTimeout(timeoutID);
-        done();  
-      });
-  }
-  
+var {defineSupportCode} = require('cucumber');
+var clients = require('../support/clients');
+var ClientHelper = require('../support/clienthelper');
 
-       this.Given(/^a game with (\d+) players$/, {timeout: 60 * 1000}, function (amount, done) {
+defineSupportCode(function({Given, When, Then}) {
+    var async = require('async');
+
+
+       Given(/^a game with (\d+) players$/, {timeout: 60 * 1000}, function (amount, done) {
            var server = this.getServer();
-           // create amount clients async and call done when done
-           async.doWhilst(
-                 function (clientready) {
-                     
-                    ConnectClientToServer(server, clientready);
-                 }, 
-                 function() { return clients.length < amount;},
-                 done);
-           
+            var world = this;
+            for (var i = 0; i < amount; i++) {
+                (function(cntr) {
+                     ClientHelper.ConnectClientToServer(world, null, function() {
+                        if (clients.length == amount) done();
+                    });
+                })(i);
+            }
        });
        
-       this.When(/^player (\d+) is ready$/, function (player, done) {
+       When(/^player (\d+) is ready$/, function (player, done) {
+         console.log('cl length' + clients.length);
         clients[player -1].emit('change_ready_state', 1);
         done();
        });
        
-        this.Then(/^the game starts within (\d+) milliseconds/, {timeout: 60 * 1000} , function (timeout, done) {
+       When('all players are ready', function (done) {
+          console.log('cl length' + clients.length);
+          for (var i = 0; i < clients.length; i++) 
+           {
+               clients[i].emit('change_ready_state', 1);
+           }(i);
+           done();
+       });
+
+        Then(/^the game starts within (\d+) milliseconds/, {timeout: 60 * 1000} , function (timeout, done) {
+             
+          
             var timeoutID = setTimeout(function(){
                 done(new Error("Game not started in time"));
             }, timeout);
             
-            
-             clients[0].on('update_game_state', function (gameState) {
+             for (var i = 0, len = clients.length; i < len; i++) 
+             {
+              clients[i].once('update_game_state', function (gameState) {
                if (gameState == 2) {
                    clearTimeout(timeoutID);
                    done();
                }
-            });
+               }); 
+             }
+       });
+       
+       Then('the game starts', function (done) {
+         // Write code here that turns the phrase above into concrete actions
+          var timeoutID = setTimeout(function(){
+                done(new Error("Game not started in time"));
+            }, 2000);
+            
+             for (var i = 0, len = clients.length; i < len; i++) 
+             {
+              clients[i].once('update_game_state', function (gameState) {
+               if (gameState == 2) {
+                   clearTimeout(timeoutID);
+                   done();
+               }
+               }); 
+             }
        });
 
-
-        this.Then(/^the game waits for player (\d+) to become ready$/, function (player, done) {
+        Then(/^the game waits for player (\d+) to become ready$/, function (player, done) {
             var maystart = false;
             clients[0].on('update_game_state', function (gameState) {
                if (gameState == 2) {
@@ -93,4 +81,4 @@
             
         });
 
-};
+});

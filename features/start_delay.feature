@@ -1,3 +1,4 @@
+@normalserver
 Feature: Delay of starting the game when players are ready
   To support the players to be able to start a new game
   and in order to give other players the chance to join that game
