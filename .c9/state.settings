@@ -11,19 +11,7 @@
         }
     },
     "breakpoints": {
-        "json()": [
-            {
-                "path": "/features/support/hooks.js",
-                "line": 14,
-                "column": 8,
-                "text": "hooks.js",
-                "content": "        for (var i = 0, len = clients.length; i < len; i++) {",
-                "time": 1485289417420,
-                "enabled": true,
-                "id": 2,
-                "invalid": false
-            }
-        ]
+        "json()": []
     },
     "console": {
         "@expanded": true,
@@ -142,15 +130,15 @@
             "@ace": 1,
             "@acestatus": 1,
             "@divider": 6,
-            "@document": 7,
+            "@document": 8,
             "@form": 6,
             "@immediate": 1,
             "@menu": 7,
             "@menuitem": 17,
             "@pane": 2,
-            "@session": 6,
-            "@tab": 4,
-            "@undoManager": 7,
+            "@session": 7,
+            "@tab": 5,
+            "@undoManager": 8,
             "@welcome": 1
         }
     },
@@ -169,7 +157,8 @@
     },
     "panecycle": {
         "json()": [
-            "tab11"
+            "tab11",
+            "tab4"
         ]
     },
     "panels": {
@@ -251,10 +240,34 @@
         "json()": {
             "focus": "tab11",
             "meta": {
-                "accessList": []
+                "accessList": [
+                    "tab4"
+                ]
             },
             "name": "pane0",
-            "nodes": [],
+            "nodes": [
+                {
+                    "type": "tab",
+                    "name": "tab4",
+                    "path": "/features/support/hooks.js",
+                    "className": [
+                        "tab4"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "ignoreState": 0,
+                            "timestamp": 1485154178535
+                        },
+                        "filter": true,
+                        "title": "hooks.js",
+                        "tooltip": "/features/support/hooks.js",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": true
+                }
+            ],
             "skin": "editor_tab",
             "skinset": "default",
             "type": "pane"
