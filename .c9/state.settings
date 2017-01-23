@@ -20,10 +20,9 @@
         "json()": {
             "meta": {
                 "accessList": [
-                    "tab11",
                     "tab34",
-                    "tab14",
-                    "tab18"
+                    "tab18",
+                    "tab11"
                 ]
             },
             "name": "pane1",
@@ -33,26 +32,27 @@
                     "name": "tab11",
                     "path": "",
                     "className": [
-                        "tab11",
-                        "focus"
+                        "tab11"
                     ],
                     "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1485194283032
-                        },
                         "filter": true,
-                        "title": "bash - \"root@f432d9baa236: /workspace\"",
-                        "tooltip": "bash - \"root@f432d9baa236: /workspace\"",
+                        "title": "bash - \"f432d9baa236\"",
+                        "tooltip": "bash - \"f432d9baa236\"",
                         "terminal": {
                             "id": "devel_700",
                             "cwd": "",
-                            "width": 1570,
-                            "height": 381
-                        }
+                            "width": 0,
+                            "height": 0,
+                            "scrollTop": 138.99999523162842
+                        },
+                        "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+                        "meta": {
+                            "timestamp": 1485194283032
+                        },
+                        "changed": false
                     },
                     "editorType": "terminal",
-                    "active": true
+                    "active": false
                 },
                 {
                     "type": "tab",
@@ -63,6 +63,8 @@
                         "running"
                     ],
                     "document": {
+                        "changed": false,
+                        "meta": {},
                         "filter": true,
                         "title": "Server - Running",
                         "tooltip": "Server - Running",
@@ -70,7 +72,6 @@
                             "id": "output263541",
                             "width": 1476,
                             "height": 381,
-                            "scrollTop": 37.63635063171387,
                             "config": {
                                 "command": "./server.js",
                                 "debug": false,
@@ -102,10 +103,7 @@
                                 ],
                                 "debug": false
                             }
-                        },
-                        "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-                        "meta": {},
-                        "changed": false
+                        }
                     },
                     "editorType": "output",
                     "active": false
@@ -121,52 +119,23 @@
                         "changed": false,
                         "meta": {},
                         "filter": true,
-                        "title": "Cucumber_Log - Stopped",
-                        "tooltip": "Cucumber_Log - Stopped",
+                        "title": "Cucumber - Stopped",
+                        "tooltip": "Cucumber - Stopped",
                         "output": {
                             "id": "output367402",
-                            "width": 0,
-                            "height": 0,
+                            "width": 1476,
+                            "height": 381,
                             "config": {
-                                "command": "runCucumber",
-                                "name": "Cucumber_Log",
-                                "runner": "Shell script",
+                                "command": "node_modules/cucumber/bin/cucumber.js $project_path --name v1",
+                                "debug": true,
+                                "name": "Cucumber",
+                                "runner": "Node.js",
                                 "toolbar": true
                             }
                         }
                     },
                     "editorType": "output",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "tab14",
-                    "path": "",
-                    "className": [
-                        "tab14"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1485200141572
-                        },
-                        "filter": true,
-                        "title": "Cucumber - Idle",
-                        "tooltip": "Cucumber - Idle",
-                        "output": {
-                            "id": "output623010",
-                            "width": 0,
-                            "height": 0,
-                            "config": {
-                                "toolbar": true,
-                                "name": "Cucumber",
-                                "command": "node_modules/cucumber/bin/cucumber.js $project_path",
-                                "runner": "Node.js"
-                            }
-                        }
-                    },
-                    "editorType": "output",
-                    "active": false
+                    "active": true
                 }
             ],
             "skin": "editor_tab",
@@ -189,15 +158,15 @@
             "@ace": 1,
             "@acestatus": 1,
             "@divider": 5,
-            "@document": 18,
+            "@document": 11,
             "@form": 5,
             "@immediate": 1,
             "@menu": 5,
             "@menuitem": 13,
             "@pane": 2,
-            "@session": 17,
-            "@tab": 16,
-            "@undoManager": 18,
+            "@session": 9,
+            "@tab": 8,
+            "@undoManager": 11,
             "@welcome": 1
         }
     },
@@ -216,14 +185,14 @@
     },
     "panecycle": {
         "json()": [
-            "tab11",
-            "tab15"
+            "tab7",
+            "tab34"
         ]
     },
     "panels": {
         "@active-left": "tree",
         "@active-right": "none",
-        "@width-left": 278,
+        "@width-left": 197,
         "collab": {
             "@enabled": "true",
             "@name": "collab"
@@ -263,8 +232,7 @@
                 "/public/javascripts",
                 "/public/javascripts/game",
                 "/features",
-                "/features/step_definitions",
-                "/output"
+                "/features/step_definitions"
             ]
         }
     },
@@ -300,29 +268,286 @@
     },
     "tabs": {
         "json()": {
-            "focus": "tab11",
+            "focus": "/features/playerName.feature",
             "meta": {
                 "accessList": [
-                    "tab15"
+                    "tab7",
+                    "tab2",
+                    "tab4",
+                    "tab6",
+                    "tab0",
+                    "tab1",
+                    "tab3",
+                    "tab5"
                 ]
             },
             "name": "pane0",
             "nodes": [
                 {
                     "type": "tab",
-                    "name": "tab15",
-                    "path": "/runCucumber",
+                    "name": "tab4",
+                    "path": "/features/support/hooks.js",
                     "className": [
-                        "tab15"
+                        "tab4"
+                    ],
+                    "document": {
+                        "filter": true,
+                        "title": "hooks.js",
+                        "tooltip": "/features/support/hooks.js",
+                        "ace": {
+                            "folds": [],
+                            "scrolltop": 295.2,
+                            "scrollleft": 0,
+                            "selection": {
+                                "start": {
+                                    "row": 34,
+                                    "column": 7
+                                },
+                                "end": {
+                                    "row": 34,
+                                    "column": 7
+                                },
+                                "isBackwards": false
+                            },
+                            "options": {
+                                "guessTabSize": true,
+                                "useWrapMode": false,
+                                "wrapToView": true
+                            },
+                            "firstLineState": {
+                                "row": 17,
+                                "state": "start",
+                                "mode": "ace/mode/javascript"
+                            }
+                        },
+                        "hash": "1c847b1e87a3e4008db902b3ebb2f5c284cf306d",
+                        "meta": {
+                            "ignoreState": 0,
+                            "timestamp": 1485180496020
+                        },
+                        "changed": false
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab0",
+                    "path": "",
+                    "className": [
+                        "tab0"
+                    ],
+                    "document": {
+                        "filter": true,
+                        "title": "Welcome",
+                        "preferences": {
+                            "activePanel": "preferences.project"
+                        },
+                        "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+                        "meta": {
+                            "welcome": true
+                        },
+                        "welcome": {},
+                        "changed": false
+                    },
+                    "editorType": "welcome",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab1",
+                    "path": "/sharedConstants.js",
+                    "className": [
+                        "tab1"
+                    ],
+                    "document": {
+                        "filter": true,
+                        "title": "sharedConstants.js",
+                        "tooltip": "/sharedConstants.js",
+                        "ace": {
+                            "folds": [],
+                            "scrolltop": 60,
+                            "scrollleft": 0,
+                            "selection": {
+                                "start": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "row": 0,
+                                    "column": 0
+                                },
+                                "isBackwards": false
+                            },
+                            "options": {
+                                "guessTabSize": true,
+                                "useWrapMode": false,
+                                "wrapToView": true
+                            },
+                            "firstLineState": {
+                                "row": 3,
+                                "state": "start",
+                                "mode": "ace/mode/javascript"
+                            },
+                            "cleansed": true
+                        },
+                        "hash": "d932cf857669882a66e6be3a613fb6a462d04bdb",
+                        "meta": {
+                            "timestamp": 1485195221160
+                        },
+                        "changed": false
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab2",
+                    "path": "/features/step_definitions/playerName.js",
+                    "className": [
+                        "tab2"
                     ],
                     "document": {
                         "changed": false,
                         "meta": {
-                            "timestamp": 1485200046735
+                            "timestamp": 1485180496020
                         },
                         "filter": true,
-                        "title": "runCucumber",
-                        "tooltip": "/runCucumber",
+                        "title": "playerName.js",
+                        "tooltip": "/features/step_definitions/playerName.js",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab3",
+                    "path": "/features/step_definitions/playername_web.js",
+                    "className": [
+                        "tab3"
+                    ],
+                    "document": {
+                        "filter": true,
+                        "title": "playername_web.js",
+                        "tooltip": "/features/step_definitions/playername_web.js",
+                        "ace": {
+                            "folds": [],
+                            "scrolltop": 250.5,
+                            "scrollleft": 0,
+                            "selection": {
+                                "start": {
+                                    "row": 0,
+                                    "column": 27
+                                },
+                                "end": {
+                                    "row": 0,
+                                    "column": 42
+                                },
+                                "isBackwards": true
+                            },
+                            "options": {
+                                "guessTabSize": true,
+                                "useWrapMode": false,
+                                "wrapToView": true
+                            },
+                            "firstLineState": {
+                                "row": 16,
+                                "state": "start",
+                                "mode": "ace/mode/javascript"
+                            }
+                        },
+                        "hash": "a33626f285bd85a5dc2ac0d32c2bb70681d7de20",
+                        "meta": {
+                            "timestamp": 1485180496020
+                        },
+                        "changed": false
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab5",
+                    "path": "/server.js",
+                    "className": [
+                        "tab5"
+                    ],
+                    "document": {
+                        "filter": true,
+                        "title": "server.js",
+                        "tooltip": "/server.js",
+                        "ace": {
+                            "folds": [],
+                            "scrolltop": 0,
+                            "scrollleft": 0,
+                            "selection": {
+                                "start": {
+                                    "row": 13,
+                                    "column": 78
+                                },
+                                "end": {
+                                    "row": 13,
+                                    "column": 78
+                                },
+                                "isBackwards": false
+                            },
+                            "options": {
+                                "guessTabSize": true,
+                                "useWrapMode": false,
+                                "wrapToView": true
+                            },
+                            "firstLineState": {
+                                "row": 3,
+                                "state": "start",
+                                "mode": "ace/mode/javascript"
+                            }
+                        },
+                        "hash": "b88ccca3856c54c2d69b48895f020a3a51063424",
+                        "meta": {
+                            "timestamp": 1485180496050
+                        },
+                        "changed": false
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab6",
+                    "path": "/features/support/world.js",
+                    "className": [
+                        "tab6"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485180496020
+                        },
+                        "filter": true,
+                        "title": "world.js",
+                        "tooltip": "/features/support/world.js",
+                        "ace": {}
+                    },
+                    "editorType": "ace",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab7",
+                    "path": "/features/playerName.feature",
+                    "className": [
+                        "tab7",
+                        "focus"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485194322768
+                        },
+                        "filter": true,
+                        "title": "playerName.feature",
+                        "tooltip": "/features/playerName.feature",
                         "ace": {}
                     },
                     "editorType": "ace",
@@ -336,7 +561,7 @@
     },
     "tree_selection": {
         "json()": [
-            "/runCucumber"
+            "/features/playerName.feature"
         ]
     }
 }
