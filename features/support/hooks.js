@@ -29,7 +29,6 @@ defineSupportCode(function({Before, After, setDefaultTimeout}) {
         for (var i = 0, len = clients.length; i < len; i++) {
           clients[i].emit('disconnect');
           clients[i].close();
-         
         }
         clients.splice(0,  clients.length);
         this.stopServer(done);

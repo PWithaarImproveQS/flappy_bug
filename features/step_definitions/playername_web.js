@@ -2,7 +2,7 @@ var Const = require('../../sharedConstants').constant;
 var {defineSupportCode} = require('cucumber');
 var Assert = require('assert');
 var ClientHelper = require('../support/clienthelper');
-var sleep = require('sleep');
+var sleep = require('sleep').msleep;
 
 var webdriver = require('selenium-webdriver'),
     By = webdriver.By,
@@ -21,30 +21,6 @@ defineSupportCode(function({Before, After, Given, When, Then}) {
     var statusField = 'gs-loader-text';
     var playButton = 'player-connection';
     
-    function waitfor(locator, timeout) {
-        return browser.wait(until.elementLocated(By.id(locator)), timeout);      
-    }
-   
-    function waitforText(locator, text, timeout) {
-        waitfor(locator,timeout / 2 ).then(function() {
-        return browser.wait(function() {
-             return browser.findElement(By.id(statusField))
-             .getAttribute("innerHTML").then(function(innerText) {
-                 return innerText === text;
-             })}
-            , timeout / 2);
-        });
-    }
-    
-    Before({tags: "@webdriver"}, function() {
-        return browser.manage().window().maximize();
-    });
-    
-      // Initialize selenium standalone server if it is not started yet 
-    After({tags: "@webdriver"}, function(done) {
-        browser.quit();
-    });
-    
      Given('a started server', function (done) {
        done();
      });
@@ -61,12 +37,10 @@ defineSupportCode(function({Before, After, Given, When, Then}) {
     });
      
     When('I wait for the page to be loaded', {timeout: 60 * 1000}, function () {
-      waitforText(statusField, "Waiting for Player", defaultTimeout); 
-      return sleep.sleep(5);
+      return waitforText(statusField, "Waiting for Player", defaultTimeout); 
     });
     
     When('I click the name box', {timeout: 60 * 1000}, function () {
-      
        return browser.findElement(By.id(playerNameInput)).click();
     });
        
@@ -87,5 +61,46 @@ defineSupportCode(function({Before, After, Given, When, Then}) {
              Assert.deepEqual(text, "Playing", "Player is not playing. Name is rejected");
              done();
         });
+    });
+    
+    function waitfor(locator, timeout) {
+        return browser.wait(until.elementLocated(By.id(locator)), timeout);      
+    }
+   
+    function waitforText(locator, text, timeout) {
+        waitfor(locator,timeout / 2 ).then(function() {
+        return browser.wait(function() {
+             sleep(400);
+             return browser.findElement(By.id(statusField))
+             .getAttribute("innerHTML").then(function(innerText) {
+                 return innerText === text;
+             })}
+            , timeout / 2);
+        });
+    }
+    
+    Before({tags: "@webdriver"}, function() {
+        return browser.manage().window().maximize();
+    });
+    
+    After({tags: "@webdriver"}, function(scenarioResult, done) {
+        if (scenarioResult.isFailed()) {
+            browser.takeScreenshot().then(function(data){
+                var filename = "/workspace/screenshots/" + new Date().toISOString() + ".png";
+                
+               var base64Data = data.replace(/^data:image\/png;base64,/,"");
+               require('fs').writeFile(filename, base64Data, 'base64', function(err) {
+                    if(err) console.log(err);
+                    console.log("[Screenshot] Saved as " + filename);
+                    finish();
+               });
+            });
+         } else (
+             finish()
+         );
+        function finish()
+        {
+            browser.quit(done());
+        }
     });
 });

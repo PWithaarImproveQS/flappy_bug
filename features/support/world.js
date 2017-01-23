@@ -4,14 +4,18 @@ var game = require('../../game_files/game');
 var PlayersManager = require('../../game_files/playersManager');
 
 
-var FlappyWorld = function() {
+var FlappyWorld = function(parameters) {
  
+  FlappyWorld.prototype.parameters = parameters;
   
   (function(){
+  
   // comment console.log/info unterneath to enable logging
+  if (this.logging != null)
+  {
    console.log = function (message) {};
    console.info = function (message) {};
-   
+  }
   })(); // end log
 };
 
@@ -35,6 +39,6 @@ FlappyWorld.prototype.port = 8080;
 FlappyWorld.prototype.ip = '127.0.0.1';
 FlappyWorld.prototype.generalTimeout = 2000;
 
-Cucumber.defineSupportCode(function({setWorldConstructor}) {
+defineSupportCode(function({setWorldConstructor}) {
   setWorldConstructor(FlappyWorld);
 });

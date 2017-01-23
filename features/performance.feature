@@ -8,6 +8,6 @@ Feature: Performance with multiple payers
 
 @injectionserver
  Scenario: The game can handle a lot of players
-     Given a game with 50 players
+     Given a game with 20 players
      When all players are ready
      Then the game starts
