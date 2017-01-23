@@ -15,16 +15,10 @@ var FlappyWorld = function() {
   })(); // end log
 };
 
-FlappyWorld.prototype.startGameServer = function(newport, callback)
+FlappyWorld.prototype.startGameServer = function(frontend, newport, callback)
 {
   this.port = newport == null ? this.port : newport; 
-  game.startServerWithDependencyInjection(null, this.port, this.playersManager, callback);
-};
-
-FlappyWorld.prototype.startGameServerWithFrontend = function(frontend,  newport, callback)
-{
-  this.port = newport == null ? this.port : newport; 
-  game.startServer(frontend, this.port);
+  game.startServerWithDependencyInjection(frontend, this.port, this.playersManager, callback);
 };
 
 FlappyWorld.prototype.stopServer = function(callback)

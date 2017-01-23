@@ -8,7 +8,7 @@ defineSupportCode(function({Before, After, setDefaultTimeout}) {
    
    var PlayersManager = require('../../game_files/playersManager');
     Before({tags: "@normalserver"}, function(done) {
-        this.startGameServer(8090, done);
+        this.startGameServer(null, 8090, done);
     });
   
     After({tags: "@normalserver"}, function(done) {
@@ -22,9 +22,7 @@ defineSupportCode(function({Before, After, setDefaultTimeout}) {
     });   
     
     Before({tags: "@webdriver"}, function(done) {
-      this.startGameServerWithFrontend(Frontend.SetupApplicationAndCreateServer(
-          Const.SERVER_TEST_PORT
-          ),Const.SERVER_TEST_PORT, done);
+      this.startGameServer(Frontend.SetupApplicationAndCreateServer(Const.SERVER_TEST_PORT), Const.SERVER_TEST_PORT, done);
     });
     
     After({tags: "@webdriver"}, function(done) {
@@ -39,11 +37,11 @@ defineSupportCode(function({Before, After, setDefaultTimeout}) {
     
     Before({tags: "@injectionserver"}, function(done) {
       this.playersManager = new PlayersManager();
-      this.startGameServer(8090, done);
+      this.startGameServer(Frontend.SetupApplicationAndCreateServer(Const.SERVER_TEST_PORT), Const.SERVER_TEST_PORT, done);
     });
    
     After({tags: "@injectionserver"}, function(done) {
-     
+      console.log("Break me on Debug!");
       for (var i = 0; i < clients.length; i++) {
         //clients[i].emit('disconnect');
         //clients[i].close();
@@ -55,12 +53,4 @@ defineSupportCode(function({Before, After, setDefaultTimeout}) {
       this.stopServer(done);
     });    
   
-    Before({tags: "@d_injectionserver"}, function(done) {
-        this.playersManager = new PlayersManager();
-        this.port = 8080;
-     });
-  
-    After({tags: "@d_injectionserver"}, function(done) {
-         console.log("Break me on Debug!");
-    });
 });

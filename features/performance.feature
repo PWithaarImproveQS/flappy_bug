@@ -7,7 +7,7 @@ Feature: Performance with multiple payers
   To do that change the @injectionserver tag to @d_injectionserver and break in the After hook
 
 @injectionserver
- Scenario: The game can handle 50 players
+ Scenario: The game can handle a lot of players
      Given a game with 50 players
      When all players are ready
      Then the game starts

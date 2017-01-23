@@ -2,19 +2,18 @@ var Const = require('../../sharedConstants').constant;
 var {defineSupportCode} = require('cucumber');
 var Assert = require('assert');
 var ClientHelper = require('../support/clienthelper');
+var sleep = require('sleep');
 
 var webdriver = require('selenium-webdriver'),
     By = webdriver.By,
     until = webdriver.until;
-  
-   
-
+ 
 var browser = new webdriver.Builder()
     .forBrowser('chrome')
     .usingServer(Const.SELENIUM_HUB)
     .build();
 
-var defaultTimeout = 10000;
+var defaultTimeout = 15000;
 
 defineSupportCode(function({Before, After, Given, When, Then}) {
 
@@ -28,13 +27,12 @@ defineSupportCode(function({Before, After, Given, When, Then}) {
    
     function waitforText(locator, text, timeout) {
         waitfor(locator,timeout / 2 ).then(function() {
-        browser.wait(
-             browser.findElement(By.id(statusField)).getAttribute("innerHTML").then(function(innerText) {
-                 console.log(innerText);
-                return innerText === text;
-                 
-             })
-                 , timeout / 2);
+        return browser.wait(function() {
+             return browser.findElement(By.id(statusField))
+             .getAttribute("innerHTML").then(function(innerText) {
+                 return innerText === text;
+             })}
+            , timeout / 2);
         });
     }
     
@@ -63,10 +61,12 @@ defineSupportCode(function({Before, After, Given, When, Then}) {
     });
      
     When('I wait for the page to be loaded', {timeout: 60 * 1000}, function () {
-      return waitforText(statusField, "Waiting for Player", defaultTimeout); 
+      waitforText(statusField, "Waiting for Player", defaultTimeout); 
+      return sleep.sleep(5);
     });
     
     When('I click the name box', {timeout: 60 * 1000}, function () {
+      
        return browser.findElement(By.id(playerNameInput)).click();
     });
        

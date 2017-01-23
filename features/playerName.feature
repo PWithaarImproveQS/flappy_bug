@@ -15,7 +15,7 @@ Scenario: Choose a unique name is accepted v1
   Given a started server
      And there already is a player called Pieter in the game
    When I go to the flappy bug url in my web browser
-   When I wait for the page to be loaded
+    And I wait for the page to be loaded
     And I click the name box
     And I remove the text Player_1
     And I enter Manon
