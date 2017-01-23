@@ -1,17 +1,15 @@
 var {defineSupportCode} = require('cucumber');
-var Cucumber = require('cucumber');
 var game = require('../../game_files/game');
-var PlayersManager = require('../../game_files/playersManager');
-
+var Const = require('../../sharedConstants').constant;
 
 var FlappyWorld = function(parameters) {
- 
+
   FlappyWorld.prototype.parameters = parameters;
   
   (function(){
   
-  // comment console.log/info unterneath to enable logging
-  if (this.logging != null)
+  
+  if (!Const.CUCUMBER_LOGGING)
   {
    console.log = function (message) {};
    console.info = function (message) {};

@@ -1,6 +1,8 @@
 // Define all constants usefull by the server and the client
 var constant = {
-
+  
+  CUCUMBER_LOGGING:          false,
+  
   SERVER_PORT:              8080,
   SERVER_TEST_PORT:         9000,
   SOCKET_PORT:              1337,
