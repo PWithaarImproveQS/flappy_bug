@@ -15,13 +15,14 @@
     },
     "console": {
         "@expanded": true,
-        "@height": 529,
+        "@height": 406.63067054748535,
         "@maximized": "false",
         "json()": {
             "meta": {
                 "accessList": [
                     "tab11",
                     "tab34",
+                    "tab14",
                     "tab18"
                 ]
             },
@@ -37,15 +38,17 @@
                     ],
                     "document": {
                         "changed": false,
-                        "meta": {},
+                        "meta": {
+                            "timestamp": 1485194283032
+                        },
                         "filter": true,
-                        "title": "bash - \"6205c9cb7e1e\"",
-                        "tooltip": "bash - \"6205c9cb7e1e\"",
+                        "title": "bash - \"root@f432d9baa236: /workspace\"",
+                        "tooltip": "bash - \"root@f432d9baa236: /workspace\"",
                         "terminal": {
                             "id": "devel_700",
                             "cwd": "",
-                            "width": 1651,
-                            "height": 503
+                            "width": 1570,
+                            "height": 381
                         }
                     },
                     "editorType": "terminal",
@@ -56,25 +59,52 @@
                     "name": "tab18",
                     "path": "",
                     "className": [
-                        "tab18"
+                        "tab18",
+                        "running"
                     ],
                     "document": {
-                        "meta": {},
                         "filter": true,
-                        "title": "Server - Stopped",
-                        "tooltip": "Server - Stopped",
+                        "title": "Server - Running",
+                        "tooltip": "Server - Running",
                         "output": {
                             "id": "output263541",
-                            "width": 0,
-                            "height": 0,
+                            "width": 1476,
+                            "height": 381,
+                            "scrollTop": 37.63635063171387,
                             "config": {
                                 "command": "./server.js",
                                 "debug": false,
                                 "name": "Server",
                                 "runner": "Node.js",
                                 "toolbar": true
+                            },
+                            "running": {
+                                "pid": 492,
+                                "name": "output263541",
+                                "running": 2,
+                                "runner": [
+                                    {
+                                        "cmd": [
+                                            "node",
+                                            "${debug?--nocrankshaft}",
+                                            "${debug?--nolazy}",
+                                            "${debug?`node --version | grep -vqE \"v0\\..\\.\" && echo --nodead_code_elimination`}",
+                                            "${debug?--debug-brk=15454}",
+                                            "$file",
+                                            "$args"
+                                        ],
+                                        "debugger": "v8",
+                                        "debugport": 15454,
+                                        "selector": "source.js",
+                                        "caption": "Node.js",
+                                        "$builtin": true
+                                    }
+                                ],
+                                "debug": false
                             }
                         },
+                        "hash": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+                        "meta": {},
                         "changed": false
                     },
                     "editorType": "output",
@@ -91,18 +121,47 @@
                         "changed": false,
                         "meta": {},
                         "filter": true,
-                        "title": "Cucumber - Stopped",
-                        "tooltip": "Cucumber - Stopped",
+                        "title": "Cucumber_Log - Stopped",
+                        "tooltip": "Cucumber_Log - Stopped",
                         "output": {
                             "id": "output367402",
                             "width": 0,
                             "height": 0,
                             "config": {
-                                "command": "node_modules/cucumber/bin/cucumber.js $project_path",
-                                "debug": true,
-                                "name": "Cucumber",
-                                "runner": "Node.js",
+                                "command": "runCucumber",
+                                "name": "Cucumber_Log",
+                                "runner": "Shell script",
                                 "toolbar": true
+                            }
+                        }
+                    },
+                    "editorType": "output",
+                    "active": false
+                },
+                {
+                    "type": "tab",
+                    "name": "tab14",
+                    "path": "",
+                    "className": [
+                        "tab14"
+                    ],
+                    "document": {
+                        "changed": false,
+                        "meta": {
+                            "timestamp": 1485200141572
+                        },
+                        "filter": true,
+                        "title": "Cucumber - Idle",
+                        "tooltip": "Cucumber - Idle",
+                        "output": {
+                            "id": "output623010",
+                            "width": 0,
+                            "height": 0,
+                            "config": {
+                                "toolbar": true,
+                                "name": "Cucumber",
+                                "command": "node_modules/cucumber/bin/cucumber.js $project_path",
+                                "runner": "Node.js"
                             }
                         }
                     },
@@ -129,16 +188,16 @@
         "counters": {
             "@ace": 1,
             "@acestatus": 1,
-            "@divider": 6,
-            "@document": 8,
-            "@form": 6,
+            "@divider": 5,
+            "@document": 18,
+            "@form": 5,
             "@immediate": 1,
-            "@menu": 7,
-            "@menuitem": 17,
+            "@menu": 5,
+            "@menuitem": 13,
             "@pane": 2,
-            "@session": 7,
-            "@tab": 5,
-            "@undoManager": 8,
+            "@session": 17,
+            "@tab": 16,
+            "@undoManager": 18,
             "@welcome": 1
         }
     },
@@ -158,13 +217,13 @@
     "panecycle": {
         "json()": [
             "tab11",
-            "tab4"
+            "tab15"
         ]
     },
     "panels": {
         "@active-left": "tree",
         "@active-right": "none",
-        "@width-left": 197,
+        "@width-left": 278,
         "collab": {
             "@enabled": "true",
             "@name": "collab"
@@ -202,7 +261,10 @@
                 "/",
                 "/features/support",
                 "/public/javascripts",
-                "/public/javascripts/game"
+                "/public/javascripts/game",
+                "/features",
+                "/features/step_definitions",
+                "/output"
             ]
         }
     },
@@ -241,27 +303,26 @@
             "focus": "tab11",
             "meta": {
                 "accessList": [
-                    "tab4"
+                    "tab15"
                 ]
             },
             "name": "pane0",
             "nodes": [
                 {
                     "type": "tab",
-                    "name": "tab4",
-                    "path": "/features/support/hooks.js",
+                    "name": "tab15",
+                    "path": "/runCucumber",
                     "className": [
-                        "tab4"
+                        "tab15"
                     ],
                     "document": {
                         "changed": false,
                         "meta": {
-                            "ignoreState": 0,
-                            "timestamp": 1485154178535
+                            "timestamp": 1485200046735
                         },
                         "filter": true,
-                        "title": "hooks.js",
-                        "tooltip": "/features/support/hooks.js",
+                        "title": "runCucumber",
+                        "tooltip": "/runCucumber",
                         "ace": {}
                     },
                     "editorType": "ace",
@@ -275,7 +336,7 @@
     },
     "tree_selection": {
         "json()": [
-            "/features/support/world.js"
+            "/runCucumber"
         ]
     }
 }

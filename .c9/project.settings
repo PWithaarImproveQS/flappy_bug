@@ -74,9 +74,14 @@
             "json()": {
                 "Cucumber": {
                     "command": "node_modules/cucumber/bin/cucumber.js $project_path",
-                    "debug": true,
                     "name": "Cucumber",
                     "runner": "Node.js",
+                    "toolbar": true
+                },
+                "Cucumber_Log": {
+                    "command": "runCucumber",
+                    "name": "Cucumber_Log",
+                    "runner": "Shell script",
                     "toolbar": true
                 },
                 "Server": {
