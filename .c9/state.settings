@@ -11,7 +11,19 @@
         }
     },
     "breakpoints": {
-        "json()": []
+        "json()": [
+            {
+                "path": "/features/support/hooks.js",
+                "line": 14,
+                "column": 8,
+                "text": "hooks.js",
+                "content": "        for (var i = 0, len = clients.length; i < len; i++) {",
+                "time": 1485289417420,
+                "enabled": true,
+                "id": 2,
+                "invalid": false
+            }
+        ]
     },
     "console": {
         "@expanded": true,
@@ -39,8 +51,8 @@
                         "changed": false,
                         "meta": {},
                         "filter": true,
-                        "title": "bash - \"779b05aa4f3c\"",
-                        "tooltip": "bash - \"779b05aa4f3c\"",
+                        "title": "bash - \"6205c9cb7e1e\"",
+                        "tooltip": "bash - \"6205c9cb7e1e\"",
                         "terminal": {
                             "id": "devel_700",
                             "cwd": "",
@@ -98,7 +110,7 @@
                             "width": 0,
                             "height": 0,
                             "config": {
-                                "command": "node_modules/cucumber/bin/cucumber.js $project_path --name v1",
+                                "command": "node_modules/cucumber/bin/cucumber.js $project_path",
                                 "debug": true,
                                 "name": "Cucumber",
                                 "runner": "Node.js",
@@ -130,15 +142,15 @@
             "@ace": 1,
             "@acestatus": 1,
             "@divider": 6,
-            "@document": 11,
+            "@document": 7,
             "@form": 6,
             "@immediate": 1,
             "@menu": 7,
             "@menuitem": 17,
             "@pane": 2,
-            "@session": 10,
-            "@tab": 8,
-            "@undoManager": 11,
+            "@session": 6,
+            "@tab": 4,
+            "@undoManager": 7,
             "@welcome": 1
         }
     },
@@ -201,9 +213,7 @@
                 "/",
                 "/features/support",
                 "/public/javascripts",
-                "/public/javascripts/game",
-                "/features",
-                "/features/step_definitions"
+                "/public/javascripts/game"
             ]
         }
     },
@@ -241,9 +251,7 @@
         "json()": {
             "focus": "tab11",
             "meta": {
-                "accessList": [
-                    "tab3"
-                ]
+                "accessList": []
             },
             "name": "pane0",
             "nodes": [],
@@ -254,7 +262,7 @@
     },
     "tree_selection": {
         "json()": [
-            "/features/step_definitions/playername_web.js"
+            "/features/support/world.js"
         ]
     }
 }

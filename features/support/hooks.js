@@ -11,7 +11,7 @@ defineSupportCode(function({Before, After, setDefaultTimeout}) {
         this.startGameServer(8090, done);
     });
   
-    After({tags: "@normalserver and @webdriver"}, function(done) {
+    After({tags: "@normalserver"}, function(done) {
         for (var i = 0, len = clients.length; i < len; i++) {
           clients[i].emit('disconnect');
           clients[i].close();
@@ -25,6 +25,16 @@ defineSupportCode(function({Before, After, setDefaultTimeout}) {
       this.startGameServerWithFrontend(Frontend.SetupApplicationAndCreateServer(
           Const.SERVER_TEST_PORT
           ),Const.SERVER_TEST_PORT, done);
+    });
+    
+    After({tags: "@webdriver"}, function(done) {
+        for (var i = 0, len = clients.length; i < len; i++) {
+          clients[i].emit('disconnect');
+          clients[i].close();
+         
+        }
+        clients.splice(0,  clients.length);
+        this.stopServer(done);
     });
     
     Before({tags: "@injectionserver"}, function(done) {
