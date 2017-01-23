@@ -21,8 +21,7 @@ Scenario: Choose a unique name is accepted v1
     And I enter Manon
     And I press the Play! button
   Then my name is accepted
-    And the start screen of flappy bug is shown
-    And a bug with my name on it is shown
+   
 
 @injectionserver
 Scenario: Choose a unique name is accepted v2

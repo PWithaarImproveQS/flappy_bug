@@ -1,8 +1,11 @@
 var {defineSupportCode} = require('cucumber');
 var Const = require('../../sharedConstants').constant;
+var Frontend     = require('../../frontend.js');
 var clients = require('../support/clients');
 
-defineSupportCode(function({Before, After}) {
+defineSupportCode(function({Before, After, setDefaultTimeout}) {
+   setDefaultTimeout(60 * 1000);
+   
    var PlayersManager = require('../../game_files/playersManager');
     Before({tags: "@normalserver"}, function(done) {
         this.startGameServer(8090, done);
@@ -19,7 +22,9 @@ defineSupportCode(function({Before, After}) {
     });   
     
     Before({tags: "@webdriver"}, function(done) {
-     // this.startGameServer(Const.SERVER_TEST_PORT, done);
+      this.startGameServerWithFrontend(Frontend.SetupApplicationAndCreateServer(
+          Const.SERVER_TEST_PORT
+          ),Const.SERVER_TEST_PORT, done);
     });
     
     Before({tags: "@injectionserver"}, function(done) {

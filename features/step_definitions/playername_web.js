@@ -1,12 +1,11 @@
 var Const = require('../../sharedConstants').constant;
-var sleep = require('sleep'); 
 var {defineSupportCode} = require('cucumber');
 var Assert = require('assert');
 var ClientHelper = require('../support/clienthelper');
 
 var webdriver = require('selenium-webdriver'),
-    By = webdriver.By,
-    until = webdriver.until;
+    By = webdriver.By;
+  
    
 
 var browser = new webdriver.Builder()
@@ -21,10 +20,12 @@ defineSupportCode(function({Before, After, Given, When, Then}) {
     var playerNameInput = 'player-name';
     var statusField = 'gs-loader-text';
     var playButton = 'player-connection';
-     
-    function waitfor(locator, timeout) {
-        browser.wait(until.elementLocated(By.id(locator)), timeout);
-        sleep.sleep(2);
+   
+    function waitforText(locator, text, timeout) {
+        browser.wait(
+             browser.findElement(By.id(statusField)).getAttribute("innerHTML").then(function(innerText) {
+                return innerText == text;})
+                 , timeout);
     }
     
     Before({tags: "@webdriver"}, function() {
@@ -48,11 +49,11 @@ defineSupportCode(function({Before, After, Given, When, Then}) {
      });
    
     When('I go to the flappy bug url in my web browser', function () {
-       return browser.get(Const.SOCKET_ADDR + ':' + Const.SERVER_PORT);
+       return browser.get(Const.SOCKET_ADDR + ':' + Const.SERVER_TEST_PORT);
     });
      
     When('I wait for the page to be loaded', {timeout: 60 * 1000}, function () {
-      return waitfor(statusField, defaultTimeout); 
+      return waitforText(statusField, "Waiting for Player", defaultTimeout); 
     });
     
     When('I click the name box', {timeout: 60 * 1000}, function () {
@@ -76,19 +77,5 @@ defineSupportCode(function({Before, After, Given, When, Then}) {
              Assert.deepEqual(text, "Playing", "Player is not playing. Name is rejected");
              done();
         });
-    });
-    
-    Then('the start screen of flappy bug is shown', function (done) {
-        // There is no real/easy way to test this anymore with selenium webdriver
-        // This is because the canvas object is already showing on the background
-        // And the drawings inside the canvas object is not testable
-        done();
-    });
-    
-    Then('a bug with my name on it is shown', function (done) {
-        // There is no real/easy way to test this anymore with selenium webdriver
-        // This is because the canvas object is already showing on the background
-        // And the drawings inside the canvas object is not testable
-        done();
     });
 });

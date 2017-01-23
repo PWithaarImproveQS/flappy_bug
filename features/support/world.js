@@ -21,6 +21,12 @@ FlappyWorld.prototype.startGameServer = function(newport, callback)
   game.startServerWithDependencyInjection(null, this.port, this.playersManager, callback);
 };
 
+FlappyWorld.prototype.startGameServerWithFrontend = function(frontend,  newport, callback)
+{
+  this.port = newport == null ? this.port : newport; 
+  game.startServer(frontend, this.port);
+};
+
 FlappyWorld.prototype.stopServer = function(callback)
 {
     game.stopServer(callback);
