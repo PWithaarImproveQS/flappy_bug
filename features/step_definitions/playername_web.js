@@ -4,7 +4,8 @@ var Assert = require('assert');
 var ClientHelper = require('../support/clienthelper');
 
 var webdriver = require('selenium-webdriver'),
-    By = webdriver.By;
+    By = webdriver.By,
+    until = webdriver.until;
   
    
 
@@ -20,12 +21,21 @@ defineSupportCode(function({Before, After, Given, When, Then}) {
     var playerNameInput = 'player-name';
     var statusField = 'gs-loader-text';
     var playButton = 'player-connection';
+    
+    function waitfor(locator, timeout) {
+        return browser.wait(until.elementLocated(By.id(locator)), timeout);      
+    }
    
     function waitforText(locator, text, timeout) {
+        waitfor(locator,timeout / 2 ).then(function() {
         browser.wait(
              browser.findElement(By.id(statusField)).getAttribute("innerHTML").then(function(innerText) {
-                return innerText == text;})
-                 , timeout);
+                 console.log(innerText);
+                return innerText === text;
+                 
+             })
+                 , timeout / 2);
+        });
     }
     
     Before({tags: "@webdriver"}, function() {

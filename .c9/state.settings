@@ -21,8 +21,8 @@
             "meta": {
                 "accessList": [
                     "tab11",
-                    "tab18",
-                    "tab34"
+                    "tab34",
+                    "tab18"
                 ]
             },
             "name": "pane1",
@@ -39,8 +39,8 @@
                         "changed": false,
                         "meta": {},
                         "filter": true,
-                        "title": "bash - \"0679e26ec07b\"",
-                        "tooltip": "bash - \"0679e26ec07b\"",
+                        "title": "bash - \"779b05aa4f3c\"",
+                        "tooltip": "bash - \"779b05aa4f3c\"",
                         "terminal": {
                             "id": "devel_700",
                             "cwd": "",
@@ -88,6 +88,7 @@
                         "tab34"
                     ],
                     "document": {
+                        "changed": false,
                         "meta": {},
                         "filter": true,
                         "title": "Cucumber - Stopped",
@@ -103,8 +104,7 @@
                                 "runner": "Node.js",
                                 "toolbar": true
                             }
-                        },
-                        "changed": false
+                        }
                     },
                     "editorType": "output",
                     "active": false
@@ -129,16 +129,16 @@
         "counters": {
             "@ace": 1,
             "@acestatus": 1,
-            "@divider": 5,
-            "@document": 16,
+            "@divider": 6,
+            "@document": 11,
             "@form": 6,
             "@immediate": 1,
-            "@menu": 5,
-            "@menuitem": 13,
+            "@menu": 7,
+            "@menuitem": 17,
             "@pane": 2,
-            "@session": 14,
-            "@tab": 1,
-            "@undoManager": 16,
+            "@session": 10,
+            "@tab": 8,
+            "@undoManager": 11,
             "@welcome": 1
         }
     },
@@ -157,8 +157,7 @@
     },
     "panecycle": {
         "json()": [
-            "tab11",
-            "tab0"
+            "tab11"
         ]
     },
     "panels": {
@@ -202,7 +201,9 @@
                 "/",
                 "/features/support",
                 "/public/javascripts",
-                "/public/javascripts/game"
+                "/public/javascripts/game",
+                "/features",
+                "/features/step_definitions"
             ]
         }
     },
@@ -238,36 +239,14 @@
     },
     "tabs": {
         "json()": {
-            "focus": "/sharedConstants.js",
+            "focus": "tab11",
             "meta": {
                 "accessList": [
-                    "tab0"
+                    "tab3"
                 ]
             },
             "name": "pane0",
-            "nodes": [
-                {
-                    "type": "tab",
-                    "name": "tab0",
-                    "path": "/sharedConstants.js",
-                    "className": [
-                        "tab0",
-                        "focus"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1485150384850
-                        },
-                        "filter": true,
-                        "title": "sharedConstants.js",
-                        "tooltip": "/sharedConstants.js",
-                        "ace": {}
-                    },
-                    "editorType": "ace",
-                    "active": true
-                }
-            ],
+            "nodes": [],
             "skin": "editor_tab",
             "skinset": "default",
             "type": "pane"
@@ -275,7 +254,7 @@
     },
     "tree_selection": {
         "json()": [
-            "/sharedConstants.js"
+            "/features/step_definitions/playername_web.js"
         ]
     }
 }
