@@ -6,7 +6,7 @@ Feature: Performance with multiple payers
   It can be run against the server running on port 8080 to also show and test the effect in the UI
   To do that change the @injectionserver tag to @injectionserver_d and break in the After hook (hooks.js line 61)
 
-@injectionserver_d
+@injectionserver
  Scenario: The game can handle a lot of players
      Given a game with 50 players
      When all players are ready
