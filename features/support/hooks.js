@@ -41,7 +41,6 @@ defineSupportCode(function({Before, After, setDefaultTimeout}) {
     });
    
     After({tags: "@injectionserver"}, function(done) {
-      console.log("Break me on Debug!");
       for (var i = 0; i < clients.length; i++) {
         //clients[i].emit('disconnect');
         //clients[i].close();
@@ -53,4 +52,19 @@ defineSupportCode(function({Before, After, setDefaultTimeout}) {
       this.stopServer(done);
     });    
   
+  Before({tags: "@injectionserver_d"}, function(done) {
+      //this.playersManager = new PlayersManager();
+      this.port = Const.SERVER_PORT;
+    });
+   
+    After({tags: "@injectionserver_d"}, function(done) {
+      console.log("Break me on Debug!");
+      for (var i = 0; i < clients.length; i++) {
+        //clients[i].emit('disconnect');
+        //clients[i].close();
+      }
+      clients.splice(0,  clients.length);
+      clients.length = 0;
+     
+    });   
 });

@@ -8,9 +8,9 @@ Feature: Showing high scores in the overview
 
 @injectionserver
 Scenario: Not overwriting lower score by same player
-   Given Pieter has a high score of 50
-   When Pieter finishes a game with score 40
-   Then the high score overview will show Pieter only once with score 40
+   Given Pieter has a high score of 5
+   When Pieter finishes a game with score 4
+   Then the high score overview will show Pieter only once with score 4
    
 @injectionserver
 Scenario: Overwriting higher score by same player
