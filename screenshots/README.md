@@ -1,0 +1,1 @@
+Here you will find screenshot made by Selenium Webdriver as png
