@@ -21,8 +21,8 @@
             "meta": {
                 "accessList": [
                     "tab11",
-                    "tab34",
-                    "tab18"
+                    "tab18",
+                    "tab34"
                 ]
             },
             "name": "pane1",
@@ -39,8 +39,8 @@
                         "changed": false,
                         "meta": {},
                         "filter": true,
-                        "title": "git - \"8d88fa856acd\"",
-                        "tooltip": "git - \"8d88fa856acd\"",
+                        "title": "bash - \"0679e26ec07b\"",
+                        "tooltip": "bash - \"0679e26ec07b\"",
                         "terminal": {
                             "id": "devel_700",
                             "cwd": "",
@@ -59,7 +59,6 @@
                         "tab18"
                     ],
                     "document": {
-                        "changed": false,
                         "meta": {},
                         "filter": true,
                         "title": "Server - Stopped",
@@ -75,7 +74,8 @@
                                 "runner": "Node.js",
                                 "toolbar": true
                             }
-                        }
+                        },
+                        "changed": false
                     },
                     "editorType": "output",
                     "active": false
@@ -88,7 +88,6 @@
                         "tab34"
                     ],
                     "document": {
-                        "changed": false,
                         "meta": {},
                         "filter": true,
                         "title": "Cucumber - Stopped",
@@ -104,7 +103,8 @@
                                 "runner": "Node.js",
                                 "toolbar": true
                             }
-                        }
+                        },
+                        "changed": false
                     },
                     "editorType": "output",
                     "active": false
@@ -129,16 +129,16 @@
         "counters": {
             "@ace": 1,
             "@acestatus": 1,
-            "@divider": 6,
-            "@document": 17,
+            "@divider": 5,
+            "@document": 16,
             "@form": 6,
             "@immediate": 1,
-            "@menu": 7,
-            "@menuitem": 17,
+            "@menu": 5,
+            "@menuitem": 13,
             "@pane": 2,
-            "@session": 17,
-            "@tab": 14,
-            "@undoManager": 17,
+            "@session": 14,
+            "@tab": 1,
+            "@undoManager": 16,
             "@welcome": 1
         }
     },
@@ -158,7 +158,7 @@
     "panecycle": {
         "json()": [
             "tab11",
-            "tab8"
+            "tab0"
         ]
     },
     "panels": {
@@ -241,17 +241,6 @@
             "focus": "/sharedConstants.js",
             "meta": {
                 "accessList": [
-                    "tab8",
-                    "tab9",
-                    "tab2",
-                    "tab10",
-                    "tab6",
-                    "tab13",
-                    "tab12",
-                    "tab5",
-                    "tab39",
-                    "tab4",
-                    "tab3",
                     "tab0"
                 ]
             },
@@ -259,157 +248,16 @@
             "nodes": [
                 {
                     "type": "tab",
-                    "name": "tab39",
-                    "path": "/server.js",
-                    "className": [
-                        "tab39"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1485108432720
-                        },
-                        "filter": true,
-                        "title": "server.js",
-                        "tooltip": "/server.js",
-                        "ace": {}
-                    },
-                    "editorType": "ace",
-                    "active": false
-                },
-                {
-                    "type": "tab",
                     "name": "tab0",
-                    "path": "",
-                    "className": [
-                        "tab0"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "welcome": true,
-                            "timestamp": 1485108592593
-                        },
-                        "filter": true,
-                        "title": "Welcome",
-                        "welcome": {}
-                    },
-                    "editorType": "welcome",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "tab2",
-                    "path": "/features/step_definitions/playername_web.js",
-                    "className": [
-                        "tab2"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "ignoreState": 0,
-                            "timestamp": 1485109878567
-                        },
-                        "filter": true,
-                        "title": "playername_web.js",
-                        "tooltip": "/features/step_definitions/playername_web.js",
-                        "ace": {}
-                    },
-                    "editorType": "ace",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "tab3",
-                    "path": "/game_files/game.js",
-                    "className": [
-                        "tab3"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1485108746362
-                        },
-                        "filter": true,
-                        "title": "game.js",
-                        "tooltip": "/game_files/game.js",
-                        "ace": {}
-                    },
-                    "editorType": "ace",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "tab4",
-                    "path": "/public/javascripts/game/gameEngine.js",
-                    "className": [
-                        "tab4"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1485108776326
-                        },
-                        "filter": true,
-                        "title": "gameEngine.js",
-                        "tooltip": "/public/javascripts/game/gameEngine.js",
-                        "ace": {}
-                    },
-                    "editorType": "ace",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "tab5",
-                    "path": "/features/support/hooks.js",
-                    "className": [
-                        "tab5"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1485109672291
-                        },
-                        "filter": true,
-                        "title": "hooks.js",
-                        "tooltip": "/features/support/hooks.js",
-                        "ace": {}
-                    },
-                    "editorType": "ace",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "tab6",
-                    "path": "/features/support/world.js",
-                    "className": [
-                        "tab6"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "ignoreState": 0
-                        },
-                        "filter": true,
-                        "title": "world.js",
-                        "tooltip": "/features/support/world.js",
-                        "ace": {}
-                    },
-                    "editorType": "ace",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "tab8",
                     "path": "/sharedConstants.js",
                     "className": [
-                        "tab8",
+                        "tab0",
                         "focus"
                     ],
                     "document": {
                         "changed": false,
                         "meta": {
-                            "timestamp": 1485109266807
+                            "timestamp": 1485150384850
                         },
                         "filter": true,
                         "title": "sharedConstants.js",
@@ -418,86 +266,6 @@
                     },
                     "editorType": "ace",
                     "active": true
-                },
-                {
-                    "type": "tab",
-                    "name": "tab9",
-                    "path": "/features/playerName.feature",
-                    "className": [
-                        "tab9"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1485109942564
-                        },
-                        "filter": true,
-                        "title": "playerName.feature",
-                        "tooltip": "/features/playerName.feature",
-                        "ace": {}
-                    },
-                    "editorType": "ace",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "tab10",
-                    "path": "/features/support/clienthelper.js",
-                    "className": [
-                        "tab10"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "ignoreState": 0
-                        },
-                        "filter": true,
-                        "title": "clienthelper.js",
-                        "tooltip": "/features/support/clienthelper.js",
-                        "ace": {}
-                    },
-                    "editorType": "ace",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "tab12",
-                    "path": "/features/step_definitions/startgame.js",
-                    "className": [
-                        "tab12"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1485109725502
-                        },
-                        "filter": true,
-                        "title": "startgame.js",
-                        "tooltip": "/features/step_definitions/startgame.js",
-                        "ace": {}
-                    },
-                    "editorType": "ace",
-                    "active": false
-                },
-                {
-                    "type": "tab",
-                    "name": "tab13",
-                    "path": "/features/step_definitions/playerName.js",
-                    "className": [
-                        "tab13"
-                    ],
-                    "document": {
-                        "changed": false,
-                        "meta": {
-                            "timestamp": 1485109734172
-                        },
-                        "filter": true,
-                        "title": "playerName.js",
-                        "tooltip": "/features/step_definitions/playerName.js",
-                        "ace": {}
-                    },
-                    "editorType": "ace",
-                    "active": false
                 }
             ],
             "skin": "editor_tab",
