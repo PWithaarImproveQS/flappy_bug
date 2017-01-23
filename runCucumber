@@ -1,0 +1,2 @@
+name=$(date '+%y-%m-%d.%H:%mm:%ss')
+node_modules/cucumber/bin/cucumber.js $project_path --name outline | tee /workspace/output/$name.log
