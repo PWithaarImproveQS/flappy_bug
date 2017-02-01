@@ -18,25 +18,24 @@ After npm install you're ready to go. Run the server with:
 node server.js
 
 ## To run this in C9
-Make an account on C9.io
+- Make an account on C9.io
 
-Create a new Workspace with the following settings:
+- Create a new Workspace with the following settings:
 
-Clone from Git or Mercurial URL (optional) : 
-
+- Clone from Git or Mercurial URL (optional) : 
 https://github.com/PWithaarImproveQS/flappy_bug.git
 
 
-Choose the Node.Js workspace template
+- Choose the Node.Js workspace template
 
 
-Give it a nice name :)
+- Give it a nice name :)
 
 
-Create the workspace
+- Create the workspace
 
 
-Now inside the workspace open a Terminal and type :
+- Now inside the workspace open a Terminal and type :
 ```
 npm install
 ```
