@@ -1,8 +1,8 @@
-Welcome to Flappy Bug!
+# Welcome to Flappy Bug!
 
 A flappy bird clone made for testing
 
-# To run this on your own machine:
+## To run this on your own machine:
 Install NodeJs 6 : https://nodejs.org/en/
 Install Git : https://git-scm.com/
 
@@ -17,7 +17,7 @@ npm install
 After npm install you're ready to go. Run the server with:
 node server.js
 
-# To run this in C9
+## To run this in C9
 Make an account on C9.io
 
 Create a new Workspace with the following settings:
