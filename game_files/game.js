@@ -32,13 +32,13 @@ function playerLog (socket, nick) {
     player.jump();
   });
   
-  socket.on('player_left', function() {
-    player.left();
-  });
+//   socket.on('player_left', function() {
+//     player.left();
+//   });
 
-  socket.on('player_right', function() {
-    player.right();
-  });
+//   socket.on('player_right', function() {
+//     player.right();
+//   });
   
   // Set player's nickname and prepare him for the next game
   _playersManager.prepareNewPlayer(player, nick);
