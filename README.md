@@ -3,8 +3,8 @@
 A flappy bird clone made for testing
 
 ## To run this on your own machine:
-Install NodeJs 6 : https://nodejs.org/en/
-Install Git : https://git-scm.com/
+- Install NodeJs 6 : https://nodejs.org/en/
+- Install Git : https://git-scm.com/
 
 After installing NodeJs and Git go to a command line or shell terminal and execute :
 
